@@ -2,31 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/*:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+}*/
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-    overflow-x: hidden
+    overflow: hidden
 }
+
 html {
-  overflow-x: hidden
+  overflow-x: hidden;
 }
+
+.theme-dark {
+  --primary-from: theme("colors.blueGrad");
+  --primary-via: theme("colors.purpleGrad");
+  --primary-to: theme("colors.pinkGrad");
+  --primaryBg: theme("colors.black");
+  --secondaryBg: theme("colors.secondaryBlack");
+  --base-color: theme("colors.white");
+  --secondary-base-color: theme("colors.mediumGrey");
+  --borderDeco: theme("colors.black");
+  --textDeco: theme("colors.white");
+}
+
+.theme-light {
+  --primary-from: theme("colors.yellowGrad");
+  --primary-via: theme("colors.orangeGrad");
+  --primary-to: theme("colors.salmonGrad");
+  --primaryBg: theme("colors.white");
+  --secondaryBg: theme("colors.white");
+  --base-color: theme("colors.black");
+  --secondary-base-color: theme("colors.darkGrey");
+  --borderDeco: theme("colors.salmonGrad");
+  --textDeco: theme("colors.salmonGrad");
+}
+
+
 

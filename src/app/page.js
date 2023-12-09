@@ -7,12 +7,12 @@ import ProjectSection from "./components/ProjectSection";
 
 export default function Home() {
   return (
-    <main className="flex flex-col bg-[#121212] min-h-screen">
+    <main className="theme-light flex flex-col bg-primaryBg min-h-screen">
       <NavBar />
       <div className="container px-12 mt-24 py-4 mx-auto ">
         <HeroSection />
         <AboutSection />
-        <ProjectSection/>
+        <ProjectSection />
       </div>
     </main>
   );

@@ -7,8 +7,8 @@ const HeroSection = () => {
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-7 place-self-center flex flex-col flex-wrap justify-center text-center sm:text-left">
-          <h1 className="text-white text-3xl sm:text-5xl 3xl:text-7xl font-extrabold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2B86C5] via-[#784BA0] to-[#FF3CAC]">
+          <h1 className="text-textDeco text-3xl sm:text-5xl 3xl:text-7xl font-extrabold mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primaryFrom via-primaryVia to-primaryTo">
               Hello, I'm{" "}
             </span>
             <br />
@@ -26,23 +26,23 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ADB7BE] text-base sm:text-lg 3xl:text-2xl mb-6">
+          <p className="text-secondaryBaseColor text-base sm:text-lg 3xl:text-2xl mb-6">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
             quam ipsum quis sit deleniti corporis.
           </p>
           <div className="">
-            <button className="rounded-full mr-4 mb-3 sm:mb-0 px-6 py-3 w-full sm:w-fit bg-gradient-to-r from-[#2B86C5] via-[#784BA0] to-[#FF3CAC] text-white hover:text-slate-200 2xl:text-xl">
+            <button className="rounded-full mr-4 mb-3 sm:mb-0 px-6 py-3 w-full sm:w-fit bg-gradient-to-r from-primaryFrom via-primaryVia to-primaryTo text-secondaryBaseColor font-semibold hover:text-slate-200 2xl:text-xl transition-all duration-300 shadow-md">
               Hire Me
             </button>
-            <button className="rounded-full mr-4 mb-5 sm:mb-0 px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-[#2B86C5] via-[#784BA0] to-[#FF3CAC] text-white hover:text-slate-200 2xl:text-xl">
-              <span className="block rounded-full bg-[#121212] px-5 py-2 text-white hover:bg-slate-800">
+            <button className="rounded-full mr-4 mb-5 sm:mb-0 px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-primaryFrom via-primaryVia to-primaryTo text-secondaryBaseColor font-semibold hover:text-slate-200 2xl:text-xl transition-all duration-300 shadow-md">
+              <span className="block rounded-full bg-primaryBg px-5 py-2 text-secondaryBaseColor hover:bg-slate-100">
                 Download CV
               </span>
             </button>
           </div>
         </div>
         <div className="col-span-5 place-self-center  ">
-          <div className="bg-[#181818] rounded-full w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] 3xl:w-[650px] 3xl:h-[650px] relative">
+          <div className="bg-secondaryBg rounded-full w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] 3xl:w-[650px] 3xl:h-[650px] relative">
             <Image
               src="/images/memoji-with-cats-nobackground.png"
               alt="hero image"

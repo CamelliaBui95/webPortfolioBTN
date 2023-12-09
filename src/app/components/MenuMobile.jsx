@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import NavLink from "./NavLink";
 
+
 const MenuMobile = ({ menuItems }) => {
+
     
   return (
     <ul

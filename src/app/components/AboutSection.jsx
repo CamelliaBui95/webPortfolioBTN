@@ -1,28 +1,35 @@
 import React, { useState, useRef, useEffect, useTransition } from "react";
 import ProgressBar from "./ProgressBar";
-import TabButton from "./TabButton";
+import TabButton from "./tab/TabButton";
 
 const TAB_DATA = [
   {
     id: "skills",
     title: "Skills",
     content: (
-      <ul className="list-disc pl-3">
-        <li>Node.js, Express</li>
-        <li>React, Next.js</li>
-        <li>JavaFx</li>
-        <li>Microsoft SQL Server, MongoDB</li>
-      </ul>
+      <div className="mt-2 py-2 flex flex-row ">
+        <ul className="list-disc pl-3">
+          <li>Node.js, Express</li>
+          <li>React, Next.js</li>
+          <li>JavaFx</li>
+        </ul>
+        <ul className="list-disc ml-10">
+          <li>Microsoft SQL Server, MongoDB</li>
+          <li>Tailwind, Bootstrap</li>
+        </ul>
+      </div>
     ),
   },
   {
     id: "education",
     title: "Education",
     content: (
-      <ul className="list-disc pl-3">
-        <li>Business English, Ton Duc Thang University, HoChiMinh City</li>
-        <li>CDA - Concepteur Developpeur d'Application, AFPA Roubaix</li>
-      </ul>
+      <div className="mt-2 py-2">
+        <ul className="list-disc pl-3">
+          <li>Business English, Ton Duc Thang University, HoChiMinh City</li>
+          <li>CDA - Concepteur Developpeur d'Application, AFPA Roubaix</li>
+        </ul>
+      </div>
     ),
   },
 ];
@@ -31,7 +38,6 @@ const animationStyles = {
   slideOut: {
     transform: "translateX(150%)",
     opacity: 0,
-    display: "hidden",
   },
   slideIn: {
     transform: "translateX(0)",
@@ -47,7 +53,7 @@ const AboutSection = () => {
 
   const handleTabChange = (id) => {
     startTransition(() => {
-        setTab(id);
+      setTab(id);
     });
   };
 
@@ -58,8 +64,8 @@ const AboutSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-            if (entry.isIntersecting) setIntersect(true);
-            else setIntersect(false)
+        if (entry.isIntersecting) setIntersect(true);
+        else setIntersect(false);
       },
       { threshold: 0.5 }
     );
@@ -74,7 +80,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section>
+    <section id="about" className="transition-all ">
       <div
         className=" md:grid md:grid-cols-2 gap-8 items-center mt-5 py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
         ref={ref}
@@ -123,9 +129,8 @@ const AboutSection = () => {
                 Education
               </TabButton>
             </div>
-            <div className="mt-2 py-2">
-              {TAB_DATA.find((t) => t.id === tab).content}
-            </div>
+
+            {TAB_DATA.find((t) => t.id === tab).content}
           </div>
         </div>
       </div>
