@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import MenuMobile from "./MenuMobile";
@@ -12,6 +12,7 @@ const navLinks = [
 
 const NavBar = () => {
   const [navMobileOpen, setNavMobileOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
       <div className="px-2 py-2 sm:px-4 sm:py-2 flex flex-wrap items-center justify-between sm:justify-start">
@@ -43,12 +44,8 @@ const NavBar = () => {
             ></span>
           </button>
         </div>
-        <div
-          className="menu hidden sm
-        :block"
-          id="navbar"
-        >
-          <ul className="flex md:flex-row">
+        <div className="menu hidden sm:block" id="navbar">
+          <ul className="flex md:flex-row ">
             {navLinks.map((link, index) => (
               <li key={index}>
                 <NavLink title={link.title} path={link.path} />

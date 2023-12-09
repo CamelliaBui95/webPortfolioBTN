@@ -1,8 +1,9 @@
 "use client";
 
+import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/HeroSection";
 import NavBar from "./components/NavBar";
-import ProgressBar from "./components/ProgressBar";
+import ProjectSection from "./components/ProjectSection";
 
 export default function Home() {
   return (
@@ -10,12 +11,8 @@ export default function Home() {
       <NavBar />
       <div className="container px-12 mt-24 py-4 mx-auto ">
         <HeroSection />
-      </div>
-
-      <div className="skills w-[500px] my-[60px] mx-auto p-[20px]">
-        <h1>Skills</h1>
-
-        <ProgressBar label={"JavaScript"} percentage={"90"} />
+        <AboutSection />
+        <ProjectSection/>
       </div>
     </main>
   );
