@@ -8,7 +8,7 @@ const ProgressBar = ({ label, percentage }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setIntersect(true);
-        else setIntersect(false)
+        else setIntersect(false);
       },
       { threshold: 1 }
     );
@@ -22,10 +22,14 @@ const ProgressBar = ({ label, percentage }) => {
 
   return (
     <div className="my-[15px] p-[10px]">
-      <h3 className="m-[5px] text-base">{label}</h3>
-      <span className="bar block h-[12.5px] bg-[#353b48] rounded-full shadow-md" ref={ref}>
+      <h3 className="m-[5px] text-base text-primaryColor">{label}</h3>
+
+      <span
+        className="bar block h-[12px] bg-bgDeco rounded-full shadow-lg my-auto"
+        ref={ref}
+      >
         <span
-          className={`h-[12px] w-[0%] rounded-full float-left bg-gradient-to-r from-[#2B86C5] via-[#784BA0] to-[#FF3CAC] transition-all duration-[2.8s] ease-out`}
+          className={`h-[12px] w-[0%] rounded-full float-left bg-gradient-to-r from-grad-from via-grad-via to-grad-to my-auto transition-all duration-[2.8s] ease-out`}
           style={{ width: `${hasIntersected ? percentage : "0"}%` }}
         ></span>
       </span>

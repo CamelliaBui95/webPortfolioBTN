@@ -1,0 +1,34 @@
+label {
+    overflow: hidden;
+    /*background-color: var(--secondaryBg);*/
+}
+
+.bg-fill {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid white;
+    opacity: 0.5;
+    position: absolute;
+    top: -120%;
+    left: 50%; 
+    z-index: -1;
+}
+
+input[type="checkbox"]:checked ~ .bg-fill {
+    border-radius: 50%;
+    transform: scale(200);
+}
+
+input[type="checkbox"]:checked ~ .switchBtn {
+    border-color: var(--primaryColor) !important;
+}
+
+input[type="checkbox"]:checked ~ .switchBtn label {
+    transform: translateX(calc(3.5rem - 2.3rem)) !important;
+}
+
+input[type="checkbox"]:checked ~ .switchBtn label .icons {
+    transform: translate(0px, -1.7rem) !important;
+}

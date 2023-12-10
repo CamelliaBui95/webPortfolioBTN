@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useRef, useEffect, useTransition } from "react";
 import ProgressBar from "./ProgressBar";
 import TabButton from "./tab/TabButton";
@@ -7,7 +8,7 @@ const TAB_DATA = [
     id: "skills",
     title: "Skills",
     content: (
-      <div className="mt-2 py-2 flex flex-row ">
+      <div className="mt-2 py-2 flex flex-row text-secondaryColor">
         <ul className="list-disc pl-3">
           <li>Node.js, Express</li>
           <li>React, Next.js</li>
@@ -24,7 +25,7 @@ const TAB_DATA = [
     id: "education",
     title: "Education",
     content: (
-      <div className="mt-2 py-2">
+      <div className="mt-2 py-2 text-secondaryColor">
         <ul className="list-disc pl-3">
           <li>Business English, Ton Duc Thang University, HoChiMinh City</li>
           <li>CDA - Concepteur Developpeur d'Application, AFPA Roubaix</li>
@@ -80,13 +81,15 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="transition-all ">
+    <section id="about" className="transition-all">
       <div
         className=" md:grid md:grid-cols-2 gap-8 items-center mt-5 py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
         ref={ref}
       >
         <div className="h-full">
-          <h2 className="text-xl sm:text-2xl font-semibold">Languages</h2>
+          <h2 className="text-xl text-primaryColor sm:text-2xl font-semibold">
+            Technologies
+          </h2>
           <ProgressBar
             label="JavaScript"
             percentage="90"
@@ -97,7 +100,9 @@ const AboutSection = () => {
           <ProgressBar label="CSS" percentage="80" load={hasIntersected} />
         </div>
         <div className="flex flex-col h-full">
-          <h2 className="text-xl sm:text-2xl font-semibold mb-4">About Me</h2>
+          <h2 className="text-xl text-primaryColor sm:text-2xl font-semibold mb-4">
+            About Me
+          </h2>
           <div
             className="transition-all duration-[1s]"
             style={
@@ -106,7 +111,7 @@ const AboutSection = () => {
                 : animationStyles.slideOut
             }
           >
-            <p className="text-base md:text-lg">
+            <p className="text-base md:text-lg text-secondaryColor md:pt-6">
               I am a full stack web developer with a passion for creating
               scalable and high-performance web/desktop applications. I have
               experience working with JavaScript, React, Redux, Node.js,

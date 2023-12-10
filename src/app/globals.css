@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 /*:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+ 
+}*/
 
 /*@media (prefers-color-scheme: dark) {
   :root {
@@ -17,7 +15,8 @@
 }*/
 
 body {
-    overflow: hidden
+    overflow: hidden;
+    box-sizing: content
 }
 
 html {
@@ -25,27 +24,33 @@ html {
 }
 
 .theme-dark {
-  --primary-from: theme("colors.blueGrad");
-  --primary-via: theme("colors.purpleGrad");
-  --primary-to: theme("colors.pinkGrad");
-  --primaryBg: theme("colors.black");
-  --secondaryBg: theme("colors.secondaryBlack");
-  --base-color: theme("colors.white");
-  --secondary-base-color: theme("colors.mediumGrey");
-  --borderDeco: theme("colors.black");
+  --grad-from: theme("colors.cyanBlue");
+  --grad-via: theme("colors.electroPurple");
+  --grad-to: theme("colors.electroPink");
+  --primaryBg: theme("colors.black-1200");
+  --inversePrimaryBg: theme("colors.creamyWhite");
+  --secondaryBg: theme("colors.black-1000");
+  --primaryColor: theme("colors.white");
+  --secondaryColor: theme("colors.grey-medium");
+  --borderDeco: theme("colors.black-1200");
   --textDeco: theme("colors.white");
+  --bgDeco: theme("colors.dark-grey");
+  --textUnderscore: theme("colors.electroPurple");
 }
 
 .theme-light {
-  --primary-from: theme("colors.yellowGrad");
-  --primary-via: theme("colors.orangeGrad");
-  --primary-to: theme("colors.salmonGrad");
-  --primaryBg: theme("colors.white");
-  --secondaryBg: theme("colors.white");
-  --base-color: theme("colors.black");
-  --secondary-base-color: theme("colors.darkGrey");
-  --borderDeco: theme("colors.salmonGrad");
-  --textDeco: theme("colors.salmonGrad");
+  --grad-from: theme("colors.yellow");
+  --grad-via: theme("colors.orange-400");
+  --grad-to: theme("colors.cherryRed-300");
+  --primaryBg: theme("colors.creamyWhite");
+  --inversePrimaryBg: theme("colors.creamyWhite");
+  --secondaryBg: theme("colors.lightPink");
+  --primaryColor: theme("colors.redBrown-dark");
+  --secondaryColor: theme("colors.redBrown-medium");
+  --borderDeco: theme("colors.cherryRed-300");
+  --textDeco: theme("colors.cherryRed-300");
+  --bgDeco: theme("colors.creamyWhite");
+  --textUnderscore: theme("colors.cherryRed-300");
 }
 
 
