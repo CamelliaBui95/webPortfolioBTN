@@ -27,9 +27,13 @@ const animationStyles = {
 const NavBar = ({mode, toggleMode}) => {
   const [navMobileOpen, setNavMobileOpen] = useState(false);
 
+
+
   return (
     <>
-      <nav className="full-opacity fixed top-0 left-0 right-0 z-[100] bg-primaryBg bg-opacity-100 shadow-md flex flex-row justify-between items-center">
+      <nav
+        className={`full-opacity fixed top-0 left-0 right-0 z-[100] bg-primaryBg bg-opacity-100 flex flex-row justify-between items-center transition-all duration-300 ${!navMobileOpen ? "shadow-md" : ""}`}
+      >
         <div className="px-2 py-2 sm:px-4 sm:py-2 flex flex-wrap items-center justify-between sm:justify-start">
           <Link
             href={"/"}
@@ -49,12 +53,12 @@ const NavBar = ({mode, toggleMode}) => {
           </div>
         </div>
         <div className="flex flex-row justify-center items-center">
-          <Toggle toggleMode={ toggleMode} />
+          <Toggle toggleMode={toggleMode} />
           <HamburgerMenu active={navMobileOpen} setActive={setNavMobileOpen} />
         </div>
       </nav>
       <nav
-        className="fixed top-10 left-0 right-0 z-10 bg-primaryBg bg-opacity-100 transition-all duration-[1s]"
+        className="fixed top-10 left-0 right-0 z-[90] bg-primaryBg bg-opacity-100 transition-all duration-[1s] shadow-md"
         style={
           !navMobileOpen ? animationStyles.hSlideIn : animationStyles.hSlideOut
         }

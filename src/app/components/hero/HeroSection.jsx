@@ -1,14 +1,16 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import "./heroStyle.css"
 
-const HeroSection = ({ mode}) => {
+const HeroSection = ({ mode }) => {
+
   useEffect(() => {
-    console.log("hero updated")
+   
   }, [mode])
   return (
-    <section>
+    <section className="z-[100]">
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div className="col-span-7 place-self-center flex flex-col flex-wrap justify-center text-center sm:text-left">
           <h1 className="text-textDeco text-3xl sm:text-5xl 3xl:text-7xl font-extrabold mb-4">
@@ -34,17 +36,16 @@ const HeroSection = ({ mode}) => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
             quam ipsum quis sit deleniti corporis.
           </p>
-          <div className="">
-            <button
-              className="rounded-full mr-4 mb-3 sm:mb-0 px-6 py-3 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-secondaryColor font-semibold hover:text-slate-200 2xl:text-xl transition-all duration-300 shadow-md"
-            >
+          <div>
+            <button className="btn1 rounded-full mr-4 mb-3 sm:mb-0 px-6 py-3 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-primaryColor font-semibold 2xl:text-xl transition-all duration-300 shadow-md">
               Hire Me
             </button>
-            <button className="rounded-full mr-4 mb-5 sm:mb-0 px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-secondaryColor font-semibold hover:text-slate-200 2xl:text-xl transition-all duration-300 shadow-md">
-              <span className="block rounded-full bg-primaryBg px-5 py-2 text-secondaryBaseColor hover:bg-slate-100">
+            <button className="btn2 rounded-full mr-4 mb-5 sm:mb-0 px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-primaryColor font-semibold 2xl:text-xl transition-all duration-300 shadow-md ">
+              <span className="block rounded-full bg-primaryBg px-5 py-2 text-secondaryBaseColor">
                 Download CV
               </span>
             </button>
+
           </div>
         </div>
         <div className="col-span-5 place-self-center  ">

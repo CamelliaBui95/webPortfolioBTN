@@ -1,21 +1,18 @@
-import React from 'react';
+import React from "react";
 import { MoonIcon } from "@heroicons/react/20/solid";
 import { SunIcon } from "@heroicons/react/20/solid";
-import './toggleStyle.css';
+import "./toggleStyle.css";
 
-
-const Toggle = ({toggleMode}) => {
+const Toggle = ({ toggleMode }) => {
   return (
-    <div className="toggle-container relative mr-3">
+    <div className="toggle-container mr-3">
       <input
         type="checkbox"
         id="toggle"
         className="hidden"
         onClick={() => toggleMode()}
       />
-
-      <div className="bg-fill transition-all duration-[0.9s]"></div>
-
+      {/**<div className="bg-fill transition-all duration-[0.9s]"></div> */}
       <div className="switchBtn w-[3.5rem] h-[2rem] border-[0.20rem] border-primaryColor rounded-full transition-all duration-300 shadow-md">
         <label
           htmlFor="toggle"
@@ -29,6 +26,6 @@ const Toggle = ({toggleMode}) => {
       </div>
     </div>
   );
-}
+};
 
-export default Toggle
+export default Toggle;

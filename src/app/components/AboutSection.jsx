@@ -58,9 +58,6 @@ const AboutSection = () => {
     });
   };
 
-  const handleIntersect = ([entry]) => {
-    if (entry.isIntersecting) console.log("Intersected");
-  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(

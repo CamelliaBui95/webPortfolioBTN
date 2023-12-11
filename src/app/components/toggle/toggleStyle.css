@@ -1,8 +1,23 @@
 label {
-    overflow: hidden;
-    /*background-color: var(--secondaryBg);*/
+  overflow: hidden;
+  /*background-color: var(--secondaryBg);*/
 }
 
+
+
+input[type="checkbox"]:checked ~ .switchBtn {
+  border-color: var(--primaryColor) !important;
+}
+
+input[type="checkbox"]:checked ~ .switchBtn label {
+  transform: translateX(calc(3.5rem - 2.3rem)) !important;
+}
+
+input[type="checkbox"]:checked ~ .switchBtn label .icons {
+  transform: translate(0px, -1.7rem) !important;
+}
+
+/*
 .bg-fill {
     width: 20px;
     height: 20px;
@@ -19,16 +34,4 @@ label {
 input[type="checkbox"]:checked ~ .bg-fill {
     border-radius: 50%;
     transform: scale(200);
-}
-
-input[type="checkbox"]:checked ~ .switchBtn {
-    border-color: var(--primaryColor) !important;
-}
-
-input[type="checkbox"]:checked ~ .switchBtn label {
-    transform: translateX(calc(3.5rem - 2.3rem)) !important;
-}
-
-input[type="checkbox"]:checked ~ .switchBtn label .icons {
-    transform: translate(0px, -1.7rem) !important;
-}
+}*/
