@@ -1,4 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -16,37 +25,18 @@ module.exports = {
         "3xl": "1700px",
       },
       colors: {
-        /* light-theme palette */
-        peach: "#FFABAB",
-        "cherryRed-300": "#D14D72",
-        lightPink: "#FCC8D1",
-        yellow: "#FFA732",
-        creamyWhite: "#FEF2F4",
-        "orange-400": "#FF9A8B",
-        "redBrown-dark": "#4A0207",
-        "redBrown-medium": "#781B22 ",
-        /* dark theme palette */
-        cyanBlue: "#2B86C5",
-        electroPurple: "#784BA0",
-        electroPink: "#FF3CAC",
-        "black-1200": "#121212",
-        "black-1000": "#181818",
-        white: "#FFFFFF",
-        "grey-medium": "#ADB7BE",
-        "dark-grey": "#454343",
-        /** global styles */
-        "grad-from": "var(--grad-from)",
-        "grad-via": "var(--grad-via)",
-        "grad-to": "var(--grad-to)",
-        primaryBg: "var(--primaryBg)",
-        secondaryBg: "var(--secondaryBg)",
-        primaryColor: "var(--primaryColor)",
-        secondaryColor: "var(--secondaryColor)",
-        borderDeco: "var(--borderDeco)",
-        textDeco: "var(--textDeco)",
-        bgDeco: "var(--bgDeco)",
-        textUnderscore: "var(--textUnderscore)",
-        inversePrimaryBg: "var(--inversePrimaryBg)",
+        "grad-from": withOpacity("--grad-from"),
+        "grad-via": withOpacity("--grad-via"),
+        "grad-to": withOpacity("--grad-to"),
+        primaryBg: withOpacity("--primaryBg"),
+        secondaryBg: withOpacity("--secondaryBg"),
+        primaryColor: withOpacity("--primaryColor"),
+        secondaryColor: withOpacity("--secondaryColor"),
+        borderDeco: withOpacity("--borderDeco"),
+        textDeco: withOpacity("--textDeco"),
+        bgDeco: withOpacity("--bgDeco"),
+        textUnderscore: withOpacity("--textUnderscore"),
+        inversePrimaryBg: withOpacity("--inversePrimaryBg"),
       },
     },
   },

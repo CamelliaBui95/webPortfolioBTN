@@ -9,7 +9,7 @@ import HamburgerMenu from "./HamburgerMenu";
 
 const navLinks = [
   { title: "About", path: "#about" },
-  { title: "Projects", path: "#project" },
+  { title: "Projects", path: "#projects" },
   { title: "Contact", path: "#contact" },
 ];
 
@@ -26,8 +26,6 @@ const animationStyles = {
 
 const NavBar = ({mode, toggleMode}) => {
   const [navMobileOpen, setNavMobileOpen] = useState(false);
-
-
 
   return (
     <>
