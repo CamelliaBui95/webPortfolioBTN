@@ -34,6 +34,7 @@ module.exports = {
         secondaryColor: withOpacity("--secondaryColor"),
         borderDeco: withOpacity("--borderDeco"),
         textDeco: withOpacity("--textDeco"),
+        secondaryTextDeco: withOpacity("--secondaryTextDeco"),
         bgDeco: withOpacity("--bgDeco"),
         textUnderscore: withOpacity("--textUnderscore"),
         inversePrimaryBg: withOpacity("--inversePrimaryBg"),

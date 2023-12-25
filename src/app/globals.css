@@ -7,6 +7,7 @@
     --color-light-pink: 252, 200, 209;
     --color-peach: 255, 171, 171;
     --color-cherry-red: 209,77,114;
+    --color-cherry-red-medium: 218,112,142;
     --color-yellow: 255,167,50;
     --color-creamy-white:254,242,244;
     --color-creamy-orange: 255,154,139;
@@ -20,7 +21,7 @@
     --color-black-1000: 24,24,24;
     --color-white: 255,255,255;
     --color-grey-medium: 173,183,190;
-    --color-grey-dark: 69,67,67;
+    --color-grey-dark: 34,34,34;
   }
 }
 
@@ -52,6 +53,7 @@ html {
   --secondaryColor: var(--color-grey-medium);
   --borderDeco: var(--color-black-1200);
   --textDeco: var(--color-white);
+  --secondaryTextDeco: var(--color-grey-medium);
   --bgDeco: var(--color-grey-dark);
   --textUnderscore: var(--color-electro-purple);
 }
@@ -67,6 +69,7 @@ html {
   --secondaryColor: var(--color-red-brown-medium);
   --borderDeco: var(--color-cherry-red);
   --textDeco: var(--color-cherry-red);
+  --secondaryTextDeco: var(--color-cherry-red-medium);
   --bgDeco: var(--color-creamy-white);
   --textUnderscore: var(--color-cherry-red);
 }
