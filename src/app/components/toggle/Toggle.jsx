@@ -13,7 +13,7 @@ const Toggle = ({ toggleMode }) => {
         onClick={() => toggleMode()}
       />
       {/**<div className="bg-fill transition-all duration-[0.9s]"></div> */}
-      <div className="switchBtn w-[3.5rem] h-[2rem] border-[0.20rem] border-primaryColor rounded-full transition-all duration-300 shadow-md">
+      <div className="switchBtn w-[3.5rem] h-[2rem] border-[0.20rem] rounded-full transition-all duration-300 shadow-md">
         <label
           htmlFor="toggle"
           className="rounded-full w-[2rem] h-[1.8rem] flex items-center justify-center cursor-pointer transition-all duration-300"

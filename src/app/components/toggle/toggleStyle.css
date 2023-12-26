@@ -4,7 +4,6 @@ label {
 }
 
 
-
 input[type="checkbox"]:checked ~ .switchBtn {
   border-color: var(--primaryColor) !important;
 }

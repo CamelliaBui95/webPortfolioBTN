@@ -63,7 +63,7 @@ const AboutSection = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setIntersect(true);
-        else setIntersect(false);
+        //else setIntersect(false);
       },
       { threshold: 0.5 }
     );

@@ -1,9 +1,9 @@
 "use client";
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import AboutSection from "./components/AboutSection";
-import HeroSection from "./components/hero/HeroSection";
+import HeroSection from "./components/heroSection/HeroSection";
 import NavBar from "./components/NavBar";
-import ProjectSection from "./components/ProjectSection";
+import ProjectSection from "./components/projectSection/ProjectSection";
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
@@ -13,23 +13,24 @@ export default function Home() {
   const handleThemeToggle = () => {
     const timer = setTimeout(() => {
       setTheme(theme === "dark" ? "light" : "dark");
-    }, 300)
+    }, 300);
 
     setTimer([...timers, timer]);
-    
-  }
+  };
 
   useEffect(() => {
     setMounted(true);
     return () => {
-      timers.forEach(t => clearTimeout(t));
-    }
-  }, [theme])
+      timers.forEach((t) => clearTimeout(t));
+    };
+  }, [theme]);
 
   if (!isMounted) return null;
 
   return (
-    <main className={`theme-${theme} flex flex-col bg-primaryBg min-h-screen relative`}>
+    <main
+      className={`theme-${theme} flex flex-col bg-primaryBg min-h-screen relative`}
+    >
       <NavBar mode={theme} toggleMode={handleThemeToggle} />
       <div className="container px-12 mt-24 py-4 mx-auto z-[80]">
         <HeroSection />

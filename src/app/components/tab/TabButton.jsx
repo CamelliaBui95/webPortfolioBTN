@@ -3,9 +3,7 @@ import "./tabStyle.css"
 
 const TabButton = ({ active, setTab, children }) => {
   const classes = active ? "text-primaryColor" : "text-textDeco";
-  useEffect(() => {
-    console.log("tab activated")
-  }, [])
+
   return (
     <button className={`mr-3 text-lg font-semibold hover:text-primaryColor ${classes} transition-all duration-300`} onClick={setTab}>
       <p>{children}</p>

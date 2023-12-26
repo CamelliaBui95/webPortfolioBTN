@@ -1,5 +1,8 @@
+"use client";
 import React from "react";
 import ProjectCard from "./ProjectCard";
+import ProjectTab from "./ProjectTab";
+import "./projectStyle.css"
 
 const projectsData = [
   {
@@ -34,7 +37,7 @@ const projectsData = [
     title: "Project 4",
     description: "Project 4 description",
     image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
+    tag: ["All", "Desktop"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -43,7 +46,7 @@ const projectsData = [
     title: "Project 5",
     description: "Project 5 description",
     image: "/images/projects/5.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Desktop"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -52,19 +55,26 @@ const projectsData = [
     title: "Project 6",
     description: "Project 6 description",
     image: "/images/projects/6.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Desktop"],
     gitUrl: "/",
     previewUrl: "/",
   },
 ];
 
 const ProjectSection = () => {
+  const tags = ["All", "Web", "Desktop"];
+
   return (
     <section className="mt-4" id="projects">
-      <h2 className="text-4xl font-bold text-center mb-8 md:mb-12 text-primaryColor">
+      <h2 className="text-4xl font-bold text-center mb-5 md:mb-7 text-primaryColor">
         My Projects
       </h2>
-      <ul className="grid md:grid-cols-3 gap-5">
+      <div className="tabContainer m-auto flex justify-evenly">
+        <ProjectTab label={tags[0]} isFirst={true} isLast={false} id={1} />
+        <ProjectTab label={tags[1]} isFirst={false} isLast={false} id={2} />
+        <ProjectTab label={tags[2]} isFirst={false} isLast={true} id={3} />
+      </div>
+      <ul className="grid md:grid-cols-3 gap-5 mt-4">
         {projectsData.map((project, index) => (
           <li key={index}>
             <ProjectCard

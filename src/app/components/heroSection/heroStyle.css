@@ -17,7 +17,7 @@
 @keyframes slide {
   0% {
     background-position: left;
-    color: var(--primaryColor);
+    @apply text-primaryColor;
   }
   25% {
     background-position: bottom;
@@ -25,7 +25,7 @@
   }
   50% {
     background-position: right;
-    color: var(--secondaryColor);
+    @apply text-secondaryColor;
   }
   75% {
     background-position: top;
@@ -33,6 +33,6 @@
   }
   100% {
     background-position: left;
-    color: var(--primaryColor);
+    @apply text-primaryColor;
   }
 }

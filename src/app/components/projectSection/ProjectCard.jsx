@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
+import "./projectStyle.css";
 
 const ProjectCard = ({ imgUrl, name, description }) => {
   return (
@@ -23,7 +25,6 @@ const ProjectCard = ({ imgUrl, name, description }) => {
             <EyeIcon className="h-12 w-12 xl:h-20 xl:w-20" />
           </Link>
         </div>
-
       </div>
       <div className="py-6 px-4 mt-2 bg-bgDeco rounded-b-xl">
         <h3 className="text-primaryColor font-semibold text-xl md:text-2xl">
@@ -31,7 +32,6 @@ const ProjectCard = ({ imgUrl, name, description }) => {
         </h3>
         <p className="text-secondaryColor">{description}</p>
       </div>
-      
     </div>
   );
 };
