@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTab from "./ProjectTab";
 import "./projectStyle.css"
@@ -37,7 +37,7 @@ const projectsData = [
     title: "Project 4",
     description: "Project 4 description",
     image: "/images/projects/4.png",
-    tag: ["All", "Desktop"],
+    tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -55,14 +55,17 @@ const projectsData = [
     title: "Project 6",
     description: "Project 6 description",
     image: "/images/projects/6.png",
-    tag: ["All", "Desktop"],
+    tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
   },
 ];
 
 const ProjectSection = () => {
+  const [selectedTab, setSelectedTab] = useState("All");
   const tags = ["All", "Web", "Desktop"];
+
+  const filteredProjects = projectsData.filter(p => p.tag.includes(selectedTab))
 
   return (
     <section className="mt-4" id="projects">
@@ -70,12 +73,22 @@ const ProjectSection = () => {
         My Projects
       </h2>
       <div className="tabContainer m-auto flex justify-evenly">
-        <ProjectTab label={tags[0]} isFirst={true} isLast={false} id={1} />
-        <ProjectTab label={tags[1]} isFirst={false} isLast={false} id={2} />
-        <ProjectTab label={tags[2]} isFirst={false} isLast={true} id={3} />
+        {tags.map((tag, index) => {
+          const isFirst = index === 0;
+          const isLast = index === tags.length - 1;
+          return (
+            <ProjectTab
+              label={tag}
+              isFirst={isFirst}
+              isLast={isLast}
+              id={index + 1}
+              onClick={() => setSelectedTab(tag)}
+            />
+          );
+        })}
       </div>
-      <ul className="grid md:grid-cols-3 gap-5 mt-4">
-        {projectsData.map((project, index) => (
+      <ul className="grid md:grid-cols-3 gap-8 md:gap-12 mt-4">
+        {filteredProjects.map((project, index) => (
           <li key={index}>
             <ProjectCard
               imgUrl={project.image}

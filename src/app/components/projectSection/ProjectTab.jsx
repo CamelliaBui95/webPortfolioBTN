@@ -14,6 +14,7 @@ const ProjectTab = ({ isFirst, isLast, label, onClick, isSelected, id }) => {
   return (
     <button
       className={`projectTab projectTab-${id} ${borderClass} block text-lg lg:text-2xl text-primaryColor font-semibold border-textUnderscore w-full p-2`}
+      onClick={onClick}
     >
       {label}
     </button>
