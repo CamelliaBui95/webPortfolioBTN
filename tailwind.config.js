@@ -20,6 +20,13 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        bgFirstLayer: "var(--bg-first-layer)",
+        bgSecondLayer: "var(--bg-second-layer)",
+        bgThirdLayer: "var(--bg-third-layer)",
+        bgGradient: "var(--bg-gradient)",
+        bgGradientFrom: withOpacity("--bg-gradient-from"),
+        bgGradientVia: withOpacity("--bg-gradient-via"),
+        bgGradientTo: withOpacity("--bg-gradient-to"),
       },
       screens: {
         "3xl": "1700px",
@@ -66,4 +73,4 @@ module.exports = {
         secondaryBg: "var(--secondaryBg)",
  */
 
-        // orange: #FFA732
+// orange: #FFA732

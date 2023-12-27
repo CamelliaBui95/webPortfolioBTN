@@ -8,7 +8,7 @@ const ProjectCard = ({ imgUrl, name, description }) => {
   return (
     <div className="shadow-xl">
       <div
-        style={{ background: `url(${imgUrl})`, backgroundSize: "cover" }}
+        style={{ backgroundImage: `url(${imgUrl})`, backgroundSize: "cover" }}
         className="h-52 md:h-72 rounded-t-xl relative group overflow-hidden "
       >
         <div className="overlay absolute top-0 left-0 h-full w-full bg-secondaryBg transform -translate-y-[100%] bg-opacity-[0.5] group-hover:translate-y-0 group-hover:bg-opacity-70 group-hover:flex flex justify-center items-center transition-all duration-500">

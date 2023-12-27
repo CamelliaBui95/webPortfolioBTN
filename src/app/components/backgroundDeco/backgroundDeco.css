@@ -1,0 +1,56 @@
+.prompt-section {
+    height: 100vh;
+    width: 100%;
+    background: theme("colors.primaryBg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform-origin: center;
+}
+
+.parallax-container {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(180deg, theme("backgroundImage.bgGradientFrom") 0%, theme("backgroundImage.bgGradientVia") 26%, theme("backgroundImage.bgGradientTo") 72%);
+    position: relative;
+    overflow: hidden;
+}
+
+.first-layer {
+    background: theme("backgroundImage.bgFirstLayer");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 3;
+}
+
+.second-layer {
+    background: theme("backgroundImage.bgThirdLayer");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+  
+    z-index: 1;
+}
+
+.moon {
+    background: theme("backgroundImage.bgSecondLayer");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+}
+
+
+
+/*background: linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(1,31,54,1) 26%, rgba(79,45,128,1) 72%);*/

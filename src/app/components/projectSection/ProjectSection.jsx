@@ -37,7 +37,7 @@ const projectsData = [
     title: "Project 4",
     description: "Project 4 description",
     image: "/images/projects/4.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Desktop"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -55,7 +55,7 @@ const projectsData = [
     title: "Project 6",
     description: "Project 6 description",
     image: "/images/projects/6.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Desktop"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -72,7 +72,7 @@ const ProjectSection = () => {
       <h2 className="text-4xl font-bold text-center mb-5 md:mb-7 text-primaryColor">
         My Projects
       </h2>
-      <div className="tabContainer m-auto flex justify-evenly">
+      <div className="tabContainer tabContainer m-auto flex justify-evenly">
         {tags.map((tag, index) => {
           const isFirst = index === 0;
           const isLast = index === tags.length - 1;
@@ -83,6 +83,7 @@ const ProjectSection = () => {
               isLast={isLast}
               id={index + 1}
               onClick={() => setSelectedTab(tag)}
+              key={index}
             />
           );
         })}

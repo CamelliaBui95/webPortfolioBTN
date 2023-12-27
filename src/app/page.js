@@ -4,6 +4,8 @@ import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/heroSection/HeroSection";
 import NavBar from "./components/NavBar";
 import ProjectSection from "./components/projectSection/ProjectSection";
+import ContactSection from "./components/contactSection/ContactSection";
+import BackgroundDeco from "./components/backgroundDeco/BackgroundDeco";
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
@@ -32,11 +34,13 @@ export default function Home() {
       className={`theme-${theme} flex flex-col bg-primaryBg min-h-screen relative`}
     >
       <NavBar mode={theme} toggleMode={handleThemeToggle} />
-      <div className="container px-12 mt-24 py-4 mx-auto z-[80]">
+      <div className="container px-14 mt-24 py-4 mx-auto z-[80]">
         <HeroSection />
         <AboutSection />
         <ProjectSection />
+        {/*<ContactSection/>*/}
       </div>
+      <BackgroundDeco />
     </main>
   );
 }

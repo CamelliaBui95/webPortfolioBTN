@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 
-
 @layer base {
   :root {
     --color-light-pink: 252, 200, 209;
@@ -15,6 +14,13 @@
     --color-creamy-orange: 255,154,139;
     --color-red-brown-dark: 74,2,7;
     --color-red-brown-medium: 120,27,34;
+    --bg-first-layer-light: url("/images/contactBg/firstLayer-light.png");
+    --bg-second-layer-light: url("/images/contactBg/foreground-light.png");
+    --bg-third-layer-light: url("/images/contactBg/thirdLayer-light.png");
+    --bg-gradient-light: "linear-gradient(180deg, rgba(254,242,244,1) 5%, rgba(255,207,139,1) 38%, rgba(255,171,171,1) 99%)";
+    --bg-gradient-from-light: 254,242,244;
+    --bg-gradient-via-light: 255,171,171;
+    --bg-gradient-to-light: 209,77,114;
     /* dark theme palette */
     --color-cyan-blue: 43,134,197;
     --color-electro-purple: 120,75,160;
@@ -24,6 +30,13 @@
     --color-white: 255,255,255;
     --color-grey-medium: 173,183,190;
     --color-grey-dark: 34,34,34; 
+    --bg-first-layer-dark: url("/images/contactBg/firstLayer-dark.png");
+    --bg-second-layer-dark: url("/images/contactBg/foreground-dark.png");
+    --bg-third-layer-dark: url("/images/contactBg/thirdLayer-dark2.png");
+    --bg-gradient-dark: "linear-gradient(180deg, rgba(18,18,18,1) 0%, rgba(1,31,54,1) 26%, rgba(79,45,128,1) 72%)";
+    --bg-gradient-from-dark: 18,18,18;
+    --bg-gradient-via-dark: 1,31,54;
+    --bg-gradient-to-dark: 79,45,128;
   }
 }
 
@@ -58,6 +71,13 @@ html {
   --secondaryTextDeco: var(--color-grey-medium);
   --bgDeco: var(--color-grey-dark);
   --textUnderscore: var(--color-electro-purple);
+
+  --bg-first-layer: var(--bg-first-layer-dark);
+  --bg-second-layer: var(--bg-second-layer-dark);
+  --bg-third-layer: var(--bg-third-layer-dark);
+  --bg-gradient-from: var(--bg-gradient-from-dark);
+  --bg-gradient-via: var(--bg-gradient-via-dark);
+  --bg-gradient-to: var(--bg-gradient-to-dark);
 }
 
 .theme-light {
@@ -74,5 +94,13 @@ html {
   --secondaryTextDeco: var(--color-cherry-red-medium);
   --bgDeco: var(--color-creamy-white);
   --textUnderscore: var(--color-cherry-red);
+
+  --bg-first-layer: var(--bg-first-layer-light);
+  --bg-second-layer: var(--bg-second-layer-light);
+  --bg-third-layer: var(--bg-third-layer-light);
+  --bg-gradient: var(--bg-gradient-light);
+  --bg-gradient-from: var(--bg-gradient-from-light);
+  --bg-gradient-via: var(--bg-gradient-via-light);
+  --bg-gradient-to: var(--bg-gradient-to-light);
 }
 
