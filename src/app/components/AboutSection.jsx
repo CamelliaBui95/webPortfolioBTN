@@ -114,7 +114,7 @@ const AboutSection = () => {
               experience working with JavaScript, React, Redux, Node.js,
               Express, HTML, CSS, Git and Docker. I am a quick learner and am
               always looking to expand my knowledge and skill set. Being a
-              self-taught most of the time, I am also very self-disciplined and
+              self-taught for two-third of the journey, I am also very self-disciplined and
               independent.
             </p>
             <div className="flex flex-row mt-4">

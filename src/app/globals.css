@@ -62,13 +62,13 @@ html {
   --grad-via: var(--color-electro-purple);
   --grad-to: var(--color-electro-pink);
   --primaryBg: var(--color-black-1200);
-  --inversePrimaryBg: var(--color-creamy-white);
+  --inversePrimaryBg: var(--color-white);
   --secondaryBg: var(--color-black-1000);
   --primaryColor: var(--color-white);
   --secondaryColor: var(--color-grey-medium);
   --borderDeco: var(--color-black-1200);
   --textDeco: var(--color-white);
-  --secondaryTextDeco: var(--color-grey-medium);
+  --secondaryTextDeco: var(--color-grey-dark);
   --bgDeco: var(--color-grey-dark);
   --textUnderscore: var(--color-electro-purple);
 

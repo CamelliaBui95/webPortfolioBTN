@@ -1,0 +1,164 @@
+.project-section {
+  box-sizing: border-box;
+  margin-top: 4rem;
+  padding: 0;
+  height: 100vh;
+}
+
+@media (min-width: 1550px) {
+  .project-section {
+    height: 80vh;
+  }
+}
+
+.h2 {
+  height: 20%;
+}
+
+.project-wrapper {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  height: 450px;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.card {
+  width: 80px;
+  border-radius: 0.75rem;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.card > .content {
+  color: theme("colors.secondaryTextDeco");
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: white;
+}
+
+.card > .content > .card-index {
+  background: theme("colors.secondaryTextDeco");
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.card > .content > .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
+}
+
+.description p {
+  color: theme("colors.secondaryColor");
+  padding-top: 5px;
+  @apply font-semibold;
+}
+
+.description h4 {
+  text-transform: uppercase;
+  @apply font-bold;
+}
+
+input {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  input:checked + label {
+    width: 600px;
+  }
+
+  input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
+
+@media (max-width: 800px) {
+  
+  .project-section {
+    height: 100%;
+  }
+
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .card-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    width: 70%;
+    height: 450px;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    margin: 0.75rem;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+  }
+
+  .card > .content > .card-index {
+    background: theme("colors.secondaryTextDeco");
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+  }
+
+  .card > .content > .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80px;
+    width: 520px;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  input:checked + label {
+  }
+
+  input:checked + label .description {
+  }
+}

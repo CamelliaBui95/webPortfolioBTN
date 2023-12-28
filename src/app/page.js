@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/heroSection/HeroSection";
 import NavBar from "./components/NavBar";
-import ProjectSection from "./components/projectSection/ProjectSection";
+import ProjectSection from "./components/projectSection2/ProjectSection";
 import ContactSection from "./components/contactSection/ContactSection";
 import BackgroundDeco from "./components/backgroundDeco/BackgroundDeco";
 
