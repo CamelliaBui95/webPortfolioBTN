@@ -38,7 +38,6 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ProjectSection />
-        {/*<ContactSection/>*/}
       </div>
       <BackgroundDeco />
     </main>
