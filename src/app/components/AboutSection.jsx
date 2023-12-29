@@ -78,9 +78,9 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="transition-all">
+    <section id="about" className="min-h-[80vh] transition-all">
       <div
-        className=" md:grid md:grid-cols-2 gap-8 items-center mt-5 py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
+        className="md:grid md:grid-cols-2 gap-8 items-center px-4 xl:gap-16 xl:px-16"
         ref={ref}
       >
         <div className="h-full">

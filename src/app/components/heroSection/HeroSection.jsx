@@ -1,18 +1,31 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
-import "./heroStyle.css"
+import "./heroStyle.css";
 
-const HeroSection = ({ mode }) => {
+const HeroSection = () => {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
-   
-  }, [mode])
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setInView(true);
+    });
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="z-[100]">
+    <section className="z-[100] min-h-screen" ref={ref}>
       <div className="grid grid-cols-1 sm:grid-cols-12">
-        <div className="col-span-7 place-self-center flex flex-col flex-wrap justify-center text-center sm:text-left">
+        <div
+          className={`left-banner  ${
+            inView ? "show-leftBanner" : ""
+          }  col-span-7 place-self-center flex flex-col flex-wrap justify-center text-center sm:text-left`}
+        >
           <h1 className="text-textDeco text-3xl sm:text-5xl 3xl:text-7xl font-extrabold mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-grad-from via-grad-via to-grad-to">
               Hello, I'm{" "}
@@ -45,10 +58,14 @@ const HeroSection = ({ mode }) => {
                 Download CV
               </span>
             </button>
-
           </div>
         </div>
-        <div className="col-span-5 place-self-center  ">
+
+        <div
+          className={`right-banner ${
+            inView ? "show-rightBanner" : ""
+          } col-span-5 place-self-center`}
+        >
           <div className="bg-secondaryBg rounded-full w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] 3xl:w-[650px] 3xl:h-[650px] relative">
             <Image
               src="/images/memoji-with-cats-nobackground.png"

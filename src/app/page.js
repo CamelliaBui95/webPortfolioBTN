@@ -5,7 +5,6 @@ import HeroSection from "./components/heroSection/HeroSection";
 import NavBar from "./components/NavBar";
 import ProjectSection from "./components/projectSection2/ProjectSection";
 import ContactSection from "./components/contactSection/ContactSection";
-import BackgroundDeco from "./components/backgroundDeco/BackgroundDeco";
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
@@ -39,7 +38,7 @@ export default function Home() {
         <AboutSection />
         <ProjectSection />
       </div>
-      <BackgroundDeco />
+      <ContactSection/>
     </main>
   );
 }

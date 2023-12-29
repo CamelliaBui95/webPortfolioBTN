@@ -11,10 +11,36 @@
 }
 
 .btn2:hover {
-  animation: slide 1.5s linear infinite;
+  animation: btnSlide 1.5s linear infinite;
 }
 
-@keyframes slide {
+.left-banner {
+  transform: scale(0);
+  opacity: 0.5;
+  transition: all 1s ease;
+}
+
+.right-banner {
+  transform: scale(0);
+  opacity: 0.5;
+  transition: all 1s ease;
+}
+
+/*Animation*/
+.show-leftBanner {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.show-rightBanner {
+  transform: scale(1);
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+
+@keyframes btnSlide {
   0% {
     background-position: left;
     @apply text-primaryColor;
@@ -36,3 +62,4 @@
     @apply text-primaryColor;
   }
 }
+
