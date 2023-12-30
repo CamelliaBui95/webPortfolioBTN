@@ -4,7 +4,7 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import "./heroStyle.css";
 
-const HeroSection = () => {
+const HeroSection = ({ onClickContactInfo }) => {
   const ref = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -19,7 +19,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="z-[100] min-h-screen" ref={ref}>
+    <section className="min-h-screen" ref={ref}>
       <div className="grid grid-cols-1 sm:grid-cols-12">
         <div
           className={`left-banner  ${
@@ -46,17 +46,16 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-secondaryColor text-base sm:text-lg 3xl:text-2xl mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            quam ipsum quis sit deleniti corporis.
+            My true passion lies in programmation and problem-solving.
           </p>
           <div>
-            <button className="btn1 rounded-full mr-4 mb-3 sm:mb-0 px-6 py-3 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-primaryColor font-semibold 2xl:text-xl transition-all duration-300 shadow-md">
-              Hire Me
+            <button onClick={onClickContactInfo} className="btn1 rounded-full mr-4 mb-3 sm:mb-0 px-6 py-3 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-primaryColor font-semibold 2xl:text-xl transition-all duration-300 shadow-md">
+              Contact Me
             </button>
             <button className="btn2 rounded-full mr-4 mb-5 sm:mb-0 px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-primaryColor font-semibold 2xl:text-xl transition-all duration-300 shadow-md ">
-              <span className="block rounded-full bg-primaryBg px-5 py-2 text-secondaryBaseColor">
+              <a href="./cv/TuongNghiBuiCV.pdf" download className="block rounded-full bg-primaryBg px-5 py-2 text-secondaryBaseColor">
                 Download CV
-              </span>
+              </a>
             </button>
           </div>
         </div>

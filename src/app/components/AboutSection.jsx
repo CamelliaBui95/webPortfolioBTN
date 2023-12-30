@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useRef, useEffect, useTransition } from "react";
 import ProgressBar from "./ProgressBar";
 import TabButton from "./tab/TabButton";
@@ -17,6 +17,7 @@ const TAB_DATA = [
         <ul className="list-disc ml-10">
           <li>Microsoft SQL Server, MongoDB</li>
           <li>Tailwind, Bootstrap</li>
+          <li>Git, Docker</li>
         </ul>
       </div>
     ),
@@ -29,6 +30,19 @@ const TAB_DATA = [
         <ul className="list-disc pl-3">
           <li>Business English, Ton Duc Thang University, HoChiMinh City</li>
           <li>CDA - Concepteur Developpeur d'Application, AFPA Roubaix</li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    id: "hobbies",
+    title: "Hobbies",
+    content: (
+      <div className="mt-2 py-2 text-secondaryColor">
+        <ul className="list-disc pl-3">
+          <li>Reading</li>
+          <li>Playing piano</li>
+          <li>Fitness</li>
         </ul>
       </div>
     ),
@@ -57,7 +71,6 @@ const AboutSection = () => {
       setTab(id);
     });
   };
-
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -109,15 +122,14 @@ const AboutSection = () => {
             }
           >
             <p className="text-base md:text-lg text-secondaryColor md:pt-6">
-              I am a full stack web developer with a passion for creating
-              scalable and high-performance web/desktop applications. I have
-              experience working with JavaScript, React, Redux, Node.js,
-              Express, HTML, CSS, Git and Docker. I am a quick learner and am
-              always looking to expand my knowledge and skill set. Being a
-              self-taught for two-third of the journey, I am also very self-disciplined and
-              independent.
+              Currently looking for an internship in{" "}
+              <span className="text-primaryColor">
+                <b>backend services</b>
+              </span>
+              , I hope to get an opportunity to expand my knowledge and skill
+              set with your team.
             </p>
-            <div className="flex flex-row mt-4">
+            <div className="flex flex-row mt-8">
               <TabButton
                 active={tab === "skills"}
                 setTab={() => handleTabChange("skills")}
@@ -129,6 +141,12 @@ const AboutSection = () => {
                 setTab={() => handleTabChange("education")}
               >
                 Education
+              </TabButton>
+              <TabButton
+                active={tab === "hobbies"}
+                setTab={() => handleTabChange("hobbies")}
+              >
+                Hobbies
               </TabButton>
             </div>
 

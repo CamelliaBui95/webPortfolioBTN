@@ -27,6 +27,8 @@ module.exports = {
         bgGradientFrom: withOpacity("--bg-gradient-from"),
         bgGradientVia: withOpacity("--bg-gradient-via"),
         bgGradientTo: withOpacity("--bg-gradient-to"),
+        iconGithub: "var(--icon-github)",
+        iconLinkedIn: "var(--icon-linkedIn)"
       },
       screens: {
         "3xl": "1700px",

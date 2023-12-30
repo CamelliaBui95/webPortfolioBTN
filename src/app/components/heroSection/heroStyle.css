@@ -3,7 +3,7 @@
 }
 
 .btn1:hover {
-  animation: slide 1.5s linear infinite;
+  animation: btnSlide 1.5s linear infinite;
 }
 
 .btn2 {

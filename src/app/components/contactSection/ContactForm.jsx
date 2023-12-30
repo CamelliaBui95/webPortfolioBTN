@@ -17,7 +17,7 @@ const ContactForm = ({display}) => {
             type="email"
             id="email"
             required
-            className="placeholder-secondaryColor text-secondaryColor text-sm rounded-lg block w-full p-2.5"
+            className="placeholder-secondaryColor text-primaryColor text-sm rounded-lg block w-full p-2.5"
             placeholder="abc@mail.com"
           />
         </div>
@@ -33,21 +33,21 @@ const ContactForm = ({display}) => {
             type="text"
             id="subject"
             required
-            className=" placeholder-secondaryColor placeholder text-secondaryColor text-sm rounded-lg block w-full p-2.5"
+            className=" placeholder-secondaryColor text-primaryColor text-sm rounded-lg block w-full p-2.5"
             placeholder="Let's talk about..."
           />
         </div>
         <div className="mb-6">
           <label
             htmlFor="message"
-            className="text-primaryColor placeholder block text-sm mb-2 font-medium"
+            className="text-primaryColor block text-sm mb-2 font-medium"
           >
             Message
           </label>
           <textarea
             name="message"
             id="message"
-            className="placeholder-secondaryColor placeholder text-secondaryColor text-sm rounded-lg block w-full p-2.5"
+            className="placeholder-secondaryColor text-primaryColor text-sm rounded-lg block w-full p-2.5"
             placeholder="..."
           ></textarea>
         </div>

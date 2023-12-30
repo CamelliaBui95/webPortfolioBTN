@@ -5,11 +5,14 @@ import HeroSection from "./components/heroSection/HeroSection";
 import NavBar from "./components/NavBar";
 import ProjectSection from "./components/projectSection2/ProjectSection";
 import ContactSection from "./components/contactSection/ContactSection";
+import Footer from "./components/Footer";
+import ContactInfo from "./components/contactInfo/ContactInfo";
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
   const [timers, setTimer] = useState([]);
   const [isMounted, setMounted] = useState(false);
+  const [displayContactInfo, setDisplayContactInfo] = useState(false);
 
   const handleThemeToggle = () => {
     const timer = setTimeout(() => {
@@ -32,13 +35,18 @@ export default function Home() {
     <main
       className={`theme-${theme} flex flex-col bg-primaryBg min-h-screen relative`}
     >
+      <ContactInfo
+        display={displayContactInfo}
+        onClose={() => setDisplayContactInfo(false)}
+      />
       <NavBar mode={theme} toggleMode={handleThemeToggle} />
       <div className="container px-14 mt-24 py-4 mx-auto z-[80]">
-        <HeroSection />
+        <HeroSection onClickContactInfo={() => setDisplayContactInfo(true)} />
         <AboutSection />
         <ProjectSection />
       </div>
-      <ContactSection/>
+      <ContactSection />
+      <Footer />
     </main>
   );
 }

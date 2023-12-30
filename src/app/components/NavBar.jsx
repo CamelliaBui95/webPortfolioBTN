@@ -10,7 +10,7 @@ import HamburgerMenu from "./HamburgerMenu";
 const navLinks = [
   { title: "About", path: "#about" },
   { title: "Projects", path: "#projects" },
-  { title: "Contact", path: "#contact" },
+  { title: "Let's connect !", path: "#contact" },
 ];
 
 const animationStyles = {

@@ -21,6 +21,8 @@
     --bg-gradient-from-light: 254,242,244;
     --bg-gradient-via-light: 255,171,171;
     --bg-gradient-to-light: 209,77,114;
+    --github-icon-light: url("/images/contactIcons/github-icon-light.svg");
+    --linkedIn-icon-light: url("/images/contactIcons/linkedin-icon-light.svg");
     /* dark theme palette */
     --color-cyan-blue: 43,134,197;
     --color-electro-purple: 120,75,160;
@@ -37,6 +39,8 @@
     --bg-gradient-from-dark: 18,18,18;
     --bg-gradient-via-dark: 1,31,54;
     --bg-gradient-to-dark: 79,45,128;
+    --github-icon-dark: url("/images/contactIcons/github-icon-dark.svg");
+    --linkedIn-icon-dark: url("/images/contactIcons/linkedin-icon-dark.svg");
   }
 }
 
@@ -78,6 +82,9 @@ html {
   --bg-gradient-from: var(--bg-gradient-from-dark);
   --bg-gradient-via: var(--bg-gradient-via-dark);
   --bg-gradient-to: var(--bg-gradient-to-dark);
+
+  --icon-github: var(--github-icon-dark);
+  --icon-linkedIn: var(--linkedIn-icon-dark);
 }
 
 .theme-light {
@@ -102,5 +109,8 @@ html {
   --bg-gradient-from: var(--bg-gradient-from-light);
   --bg-gradient-via: var(--bg-gradient-via-light);
   --bg-gradient-to: var(--bg-gradient-to-light);
+
+  --icon-github: var(--github-icon-light);
+  --icon-linkedIn: var(--linkedIn-icon-light);
 }
 

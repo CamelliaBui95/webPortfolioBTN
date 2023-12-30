@@ -58,14 +58,14 @@ const ContactSection = () => {
         <p
           className={`prompt ${promptSlideUp} text-primaryColor text-center text-5xl`}
         >
-          Let's connect
+          Let's connect !
         </p>
         <p
-          className={`text ${showText} text-secondaryColor text-center text-3xl mt-12 w-fit`}
+          className={`text ${showText} text-secondaryColor text-center text-3xl mt-12 px-4 w-fit`}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. At excepturi
-          iusto nobis aut aliquid itaque vel accusantium! Est qui nisi sint,
-          quos nam quibusdam repellendus eius! Id, illo. Vel, molestiae.
+          My inbox is always open.
+          Whether you have a question or just want to say hi, I'll try my best
+          to get back to you.
         </p>
       </div>
 
@@ -74,7 +74,7 @@ const ContactSection = () => {
         <div className={`second-layer ${secondLayerSlideUp}`}></div>
         <div className={`moon ${moonSlideIn}`}></div>
 
-        {<ContactForm display={showForm}/>}
+        {<ContactForm display={showForm} />}
       </div>
     </section>
   );
