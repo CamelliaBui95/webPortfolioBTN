@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin-top: 4rem;
   padding: 0;
-  height: 100vh;
+  height: 110vh;
 }
 
 @media (min-width: 1550px) {
@@ -17,7 +17,7 @@
 
 .project-wrapper {
   width: 100%;
-  height: 80%;
+  height: 70%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,16 +25,18 @@
 
 .card-container {
   display: flex;
-  height: 450px;
+  height: 415px;
   flex-wrap: nowrap;
   justify-content: flex-start;
 }
 
 .card {
+  position: relative;
   width: 80px;
   border-radius: 0.75rem;
-  background-size: cover;
   cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
   border-radius: 2rem;
   margin: 0 10px;
@@ -42,6 +44,25 @@
   align-items: flex-end;
   transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.card > .overlay {
+  position: absolute;
+  bottom: 80px;
+  width: 80px;
+  background-color: theme("colors.secondaryBg");
+  height: 335px;
+  font-size: 3rem;
+  font-weight: 800;
+  opacity: 0.95;
+}
+
+.card > .overlay > .initial {
+  transition: all 0.3s;
+}
+
+.card > .overlay > .initial:hover {
+  font-size: 3.2rem;
 }
 
 .card > .content {
@@ -62,19 +83,24 @@
   margin: 15px;
 }
 
-.card > .content > .description {
+.desc-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 570px;
   height: 80px;
-  width: 520px;
+  overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
   transition-delay: 0.3s;
   transition: all 0.3s ease;
 }
-
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .description p {
   color: theme("colors.secondaryColor");
   padding-top: 5px;
@@ -82,7 +108,7 @@
 }
 
 .description h4 {
-  text-transform: uppercase;
+  font-size: 1.3rem;
   @apply font-bold;
 }
 
@@ -92,21 +118,26 @@ input {
 
 @media (min-width: 800px) {
   input:checked + label {
-    width: 600px;
+    width: 650px;
+    background-size: contain;
   }
 
-  input:checked + label .description {
+  input:checked + label .desc-container {
     opacity: 1 !important;
     transform: translateY(0) !important;
+  }
+
+  input:checked + label .overlay {
+    height: 0;
+    font-size: 0;
+    opacity: 0;
   }
 }
 
 @media (max-width: 800px) {
-  
   .project-section {
     height: 100%;
   }
-
 
   h2 {
     margin-bottom: 2rem;
@@ -122,9 +153,9 @@ input {
   }
 
   .card {
-    width: 70%;
-    height: 450px;
-    background-size: cover;
+    width: 120%;
+    height: 310px;
+    background-size: contain;
     cursor: pointer;
     overflow: hidden;
     border-radius: 0.75rem;
@@ -135,8 +166,12 @@ input {
     box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
   }
 
+  .content {
+    width: 100%;
+  }
+
   .card > .content > .card-index {
-    background: theme("colors.secondaryTextDeco");
+    background: theme("colors.bgDeco");
     color: #fff;
     border-radius: 50%;
     width: 50px;
@@ -146,19 +181,29 @@ input {
     margin: 15px;
   }
 
-  .card > .content > .description {
+  .card > .content > .desc-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: flex-row;
+    justify-items: space-between;
     height: 80px;
-    width: 520px;
+    width: 100%;
     transform: translateY(0px);
     opacity: 1;
+  }
+
+  .card > .overlay {
+    display: none;
+  }
+
+  .card > .content > .desc-container > .description {
   }
 
   input:checked + label {
   }
 
-  input:checked + label .description {
+  input:checked + label .desc-container {
+  }
+
+  input:checked + label .overlay {
   }
 }

@@ -5,51 +5,48 @@ import ProjectCard from "./ProjectCard";
 const projectsData = [
   {
     id: 1,
-    title: "Project 1",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    title: "Top News Deliverer",
+    description: "Top Headlines Delivered By NewsAPI",
+    image: "/images/projects/newsAPI_1.png",
     gitUrl: "/",
     previewUrl: "/",
+    initial: "T",
   },
   {
     id: 2,
-    title: "Project 2",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
+    title: "FriendChat",
+    description: "Basic Real-time Chat Application",
+    image: "/images/projects/friendChat_1.png",
     gitUrl: "/",
     previewUrl: "/",
+    initial: "F",
   },
   {
     id: 3,
-    title: "Project 3",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
+    title: "Feed My Goat",
+    description: "Little JavaScript Game",
+    image: "/images/projects/gps_goat_1.png",
     gitUrl: "/",
     previewUrl: "/",
+    initial: "G",
   },
   {
     id: 4,
-    title: "Project 4",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
+    title: "Routard Admin",
+    description: "Traveling Data Manager For Backpackers",
+    image: "/images/projects/routard_1.png",
     gitUrl: "/",
     previewUrl: "/",
+    initial: "R",
   },
   {
     id: 5,
-    title: "Project 5",
-    description: "Project 5 description",
-    image: "/images/projects/5.png",
+    title: "SBDM - Gestion des Bières",
+    description: "Desktop App For Product Management",
+    image: "/images/projects/sbdm_1.png",
     gitUrl: "/",
     previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Project 6",
-    description: "Project 6 description",
-    image: "/images/projects/6.png",
-    gitUrl: "/",
-    previewUrl: "/",
+    initial: "S",
   },
 ];
 
@@ -62,7 +59,14 @@ const ProjectSection = () => {
       <div className="project-wrapper">
         <div className="card-container">
           {projectsData.map((p) => (
-            <ProjectCard index={p.id} imgUrl={p.image} title={p.title} description={p.description} isChecked={p.id === 3}/>
+            <ProjectCard
+              index={p.id}
+              imgUrl={p.image}
+              title={p.title}
+              description={p.description}
+              isChecked={p.id === 3}
+              initial={p.initial}
+            />
           ))}
         </div>
       </div>
