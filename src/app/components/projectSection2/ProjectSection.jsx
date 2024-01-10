@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useState, useEffect} from "react";
 import "./projectSectionStyle.css";
 import ProjectCard from "./ProjectCard";
 
@@ -41,7 +41,7 @@ const projectsData = [
   },
   {
     id: 5,
-    title: "SBDM - Gestion des Bières",
+    title: "SBDM",
     description: "Desktop App For Product Management",
     image: "/images/projects/sbdm_1.png",
     gitUrl: "/",
@@ -51,13 +51,29 @@ const projectsData = [
 ];
 
 const ProjectSection = () => {
+  const ref = useRef(null);
+  const [startAnimation, setStartAnimation] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if(entry.isIntersecting)
+        setStartAnimation(true);
+        
+    }, { threshold: 1 });
+
+    if(ref.current)
+      observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, [])
+
   return (
     <section className="project-section" id="projects">
       <h2 className="text-primaryColor text-3xl md:text-4xl font-semibold text-center">
         My Projects
       </h2>
       <div className="project-wrapper">
-        <div className="card-container">
+        <div className="card-container" ref={ref}>
           {projectsData.map((p) => (
             <ProjectCard
               index={p.id}
@@ -66,6 +82,7 @@ const ProjectSection = () => {
               description={p.description}
               isChecked={p.id === 3}
               initial={p.initial}
+              startAnimation={startAnimation}
             />
           ))}
         </div>
