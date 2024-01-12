@@ -16,6 +16,9 @@ export default function Home() {
   const [displayContactInfo, setDisplayContactInfo] = useState(false);
   const [displayCarousel, setDisplayCarousel] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
+  const [viewPortSize, setViewPortSize] = useState({
+    width: window.innerWidth,
+  });
 
   const handleThemeToggle = () => {
     const timer = setTimeout(() => {
@@ -24,6 +27,12 @@ export default function Home() {
 
     setTimer([...timers, timer]);
   };
+
+  useEffect(() => {
+    window.onresize = () => {
+      setViewPortSize({ width: window.innerWidth });
+    };
+  }, [viewPortSize]);
 
   useEffect(() => {
     setMounted(true);
@@ -42,11 +51,14 @@ export default function Home() {
         display={displayContactInfo}
         onClose={() => setDisplayContactInfo(false)}
       />
-      <ProjectDetail
-        display={displayCarousel}
-        onClose={() => setDisplayCarousel(false)}
-        project={selectedProject}
-      />
+      {viewPortSize.width > 800 && (
+        <ProjectDetail
+          display={displayCarousel}
+          onClose={() => setDisplayCarousel(false)}
+          project={selectedProject}
+        />
+      )}
+
       <NavBar mode={theme} toggleMode={handleThemeToggle} />
       <div className="container px-14 mt-24 py-4 mx-auto z-[80]">
         <HeroSection onClickContactInfo={() => setDisplayContactInfo(true)} />
