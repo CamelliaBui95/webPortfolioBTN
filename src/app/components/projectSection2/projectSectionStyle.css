@@ -179,7 +179,7 @@ input {
   }
 
   .card > .content > .card-index {
-    background: theme("colors.bgDeco");
+    background: theme("colors.secondaryTextDeco");
     color: #fff;
     border-radius: 50%;
     width: 50px;

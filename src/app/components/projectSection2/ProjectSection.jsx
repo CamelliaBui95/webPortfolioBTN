@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./projectSectionStyle.css";
 import ProjectCard from "./ProjectCard";
 
@@ -9,7 +9,14 @@ const projectsData = [
     description: "Top Headlines Delivered By NewsAPI",
     image: "/images/projects/newsAPI_1.png",
     gitUrl: "/",
-    previewUrl: "/",
+    type: "Web Application",
+    technologies: ["JavaScript", "React", "NextJs", "Bootstrap"],
+    slides: [
+      { url: "/images/projects/newsAPI_1.png", type: "image" },
+      { url: "/images/projects/newsAPI_2.png", type: "image" },
+      { url: "/images/projects/newsAPI_3.png", type: "image" },
+      { url: "/images/projects/newsAPI_4.png", type: "image" },
+    ],
     initial: "T",
   },
   {
@@ -18,16 +25,29 @@ const projectsData = [
     description: "Basic Real-time Chat Application",
     image: "/images/projects/friendChat_1.png",
     gitUrl: "/",
-    previewUrl: "/",
+    type: "Web Application",
+    technologies: ["JavaScript", "React", "NodeJs", "MongoDB", "Bootstrap"],
+    slides: [
+      { url: "/images/projects/friendChat_1.png", type: "image" },
+      { url: "/images/projects/friendChat_2.png", type: "image" },
+      { url: "/images/projects/friendChat_3.png", type: "image" },
+      { url: "/images/projects/friendChat_4.png", type: "image" },
+    ],
     initial: "F",
   },
+  /**public\images\projects\slides\friendChat_1.png */
   {
     id: 3,
     title: "Feed My Goat",
     description: "Little JavaScript Game",
     image: "/images/projects/gps_goat_1.png",
     gitUrl: "/",
-    previewUrl: "/",
+    type: "Web Application",
+    technologies: ["JavaScript", "CSS", "HTML"],
+    slides: [
+      { url: "/images/projects/gps_goat_1.png", type: "image" },
+      { url: "/images/projects/gps_goat_vid.mp4", type: "video" },
+    ],
     initial: "G",
   },
   {
@@ -36,7 +56,14 @@ const projectsData = [
     description: "Traveling Data Manager For Backpackers",
     image: "/images/projects/routard_1.png",
     gitUrl: "/",
-    previewUrl: "/",
+    type: "Desktop Application",
+    technologies: ["Java", "JavaFX", "Microsoft SQL Server", "Scene Builder"],
+    slides: [
+      { url: "/images/projects/routard_1.png", type: "image" },
+      { url: "/images/projects/routard_2.png", type: "image" },
+      { url: "/images/projects/routard_3.png", type: "image" },
+      { url: "/images/projects/routard_4.png", type: "image" },
+    ],
     initial: "R",
   },
   {
@@ -45,27 +72,53 @@ const projectsData = [
     description: "Desktop App For Product Management",
     image: "/images/projects/sbdm_1.png",
     gitUrl: "/",
-    previewUrl: "/",
+    type: "Desktop Application",
+    technologies: ["Java", "JavaFX", "Microsoft SQL Server", "Scene Builder"],
+    slides: [
+      { url: "/images/projects/sbdm_1.png", type: "image" },
+      { url: "/images/projects/sbdm_2.png", type: "image" },
+      { url: "/images/projects/sbdm_3.png", type: "image" },
+      { url: "/images/projects/sbdm_4.png", type: "image" },
+    ],
     initial: "S",
   },
 ];
 
-const ProjectSection = () => {
+const ProjectSection = ({ onDisplayProjectDetail }) => {
   const ref = useRef(null);
+  const [selected, setSelected] = useState("");
   const [startAnimation, setStartAnimation] = useState(false);
 
+  const handleChange = (e) => {
+    setSelected(e.target.value);
+  };
+
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if(entry.isIntersecting)
-        setStartAnimation(true);
-        
-    }, { threshold: 1 });
+    let idTimeOut = null;
 
-    if(ref.current)
-      observer.observe(ref.current);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartAnimation(true);
 
-    return () => observer.disconnect();
-  }, [])
+          if(idTimeOut === null) {
+            idTimeOut = setTimeout(() => {
+              setSelected("c3");
+            }, 5000);
+          }
+          
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(idTimeOut);
+    };
+  }, []);
 
   return (
     <section className="project-section" id="projects">
@@ -76,13 +129,11 @@ const ProjectSection = () => {
         <div className="card-container" ref={ref}>
           {projectsData.map((p) => (
             <ProjectCard
-              index={p.id}
-              imgUrl={p.image}
-              title={p.title}
-              description={p.description}
-              isChecked={p.id === 3}
-              initial={p.initial}
+              project={p}
+              selected={selected}
+              onChange={handleChange}
               startAnimation={startAnimation}
+              onDisplayProjectDetail={() => onDisplayProjectDetail(p)}
             />
           ))}
         </div>

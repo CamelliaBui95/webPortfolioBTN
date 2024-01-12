@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import NavLink from "./NavLink";
 import MenuMobile from "./MenuMobile";
-import Toggle from "./toggle/Toggle";
+import Toggle from "../toggle/Toggle";
 import HamburgerMenu from "./HamburgerMenu";
 
 
