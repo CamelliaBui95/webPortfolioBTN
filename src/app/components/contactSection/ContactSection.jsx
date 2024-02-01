@@ -63,10 +63,8 @@ const ContactSection = () => {
         <p
           className={`text ${showText} text-secondaryColor text-center text-3xl mt-12 px-4 w-fit`}
         >
-         { /*My inbox is always open.
-          Whether you have a question or just want to say hi, I'll try my best
-  to get back to you.*/}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eaque quod, sed aliquam laborum tenetur, aspernatur quo praesentium error ipsam laboriosam numquam sequi! Obcaecati illo minima non voluptate explicabo architecto.
+          My inbox is always open. Whether you have a question or just want to
+          say hi, I'll try my best to get back to you.
         </p>
       </div>
 

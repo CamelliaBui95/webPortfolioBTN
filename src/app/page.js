@@ -3,13 +3,11 @@ import React, { useState, useEffect } from "react";
 import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/heroSection/HeroSection";
 import NavBar from "./components/navBar/NavBar";
-import ProjectSection from "./components/projectSection2/ProjectSection";
+import ProjectSection from "./components/projectSection/ProjectSection";
 import ContactSection from "./components/contactSection/ContactSection";
 import Footer from "./components/Footer";
 import ContactInfo from "./components/contactInfo/ContactInfo";
 import ProjectDetail from "./components/projectDetail/ProjectDetail";
-import useDimension from "@/useDimension";
-import ProjectSectionMobile from "./components/projectSectionForMobile/ProjectSectionMobile";
 
 export default function Home() {
   const [theme, setTheme] = useState("dark");
@@ -18,7 +16,9 @@ export default function Home() {
   const [displayContactInfo, setDisplayContactInfo] = useState(false);
   const [displayCarousel, setDisplayCarousel] = useState(false);
   const [selectedProject, setSelectedProject] = useState({});
-  const { width } = useDimension();
+  const [viewPortSize, setViewPortSize] = useState({
+    width: window.innerWidth,
+  });
 
   const handleThemeToggle = () => {
     const timer = setTimeout(() => {
@@ -27,6 +27,12 @@ export default function Home() {
 
     setTimer([...timers, timer]);
   };
+
+  useEffect(() => {
+    window.onresize = () => {
+      setViewPortSize({ width: window.innerWidth });
+    };
+  }, [viewPortSize]);
 
   useEffect(() => {
     setMounted(true);
@@ -45,7 +51,7 @@ export default function Home() {
         display={displayContactInfo}
         onClose={() => setDisplayContactInfo(false)}
       />
-      {width > 1280 && (
+      {viewPortSize.width > 800 && (
         <ProjectDetail
           display={displayCarousel}
           onClose={() => setDisplayCarousel(false)}
@@ -54,22 +60,15 @@ export default function Home() {
       )}
 
       <NavBar mode={theme} toggleMode={handleThemeToggle} />
-      <div className="container px-8 xl:px-10 3xl:px-14 mt-24 py-4 mx-auto z-[80]">
+      <div className="container px-14 mt-24 py-4 mx-auto z-[80]">
         <HeroSection onClickContactInfo={() => setDisplayContactInfo(true)} />
         <AboutSection />
-        {width > 1280 && (
-          <ProjectSection
-            onDisplayProjectDetail={(p) => {
-              setSelectedProject(p);
-              setDisplayCarousel(true);
-            }}
-          />
-        )}
-        {
-          width < 1280 && (
-            <ProjectSectionMobile/>
-          )
-        }
+        <ProjectSection
+          onDisplayProjectDetail={(p) => {
+            setSelectedProject(p);
+            setDisplayCarousel(true);
+          }}
+        />
       </div>
       <ContactSection />
       <Footer />

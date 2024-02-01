@@ -1,104 +1,144 @@
-"use client";
-import React, {useState} from "react";
+import React, { useRef, useState, useEffect } from "react";
+import "./projectSectionStyle.css";
 import ProjectCard from "./ProjectCard";
-import ProjectTab from "./ProjectTab";
-import "./projectStyle.css"
 
 const projectsData = [
   {
     id: 1,
-    title: "Project 1",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Top News Deliverer",
+    description: "Top Headlines Delivered By NewsAPI",
+    image: "/images/projects/newsAPI_1.png",
+    gitUrl: "https://github.com/CamelliaBui95/newsApi",
+    type: "Web Application",
+    technologies: ["JavaScript", "React", "NextJs", "Bootstrap"],
+    slides: [
+      { url: "/images/projects/newsAPI_1.png", type: "image" },
+      { url: "/images/projects/newsAPI_2.png", type: "image" },
+      { url: "/images/projects/newsAPI_3.png", type: "image" },
+      { url: "/images/projects/newsAPI_4.png", type: "image" },
+    ],
+    initial: "T",
   },
   {
     id: 2,
-    title: "Project 2",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "FriendChat",
+    description: "Basic Real-time Chat Application",
+    image: "/images/projects/friendChat_1.png",
+    gitUrl: "https://github.com/CamelliaBui95/friendchat",
+    type: "Web Application",
+    technologies: ["JavaScript", "React", "NodeJs", "MongoDB", "Bootstrap"],
+    slides: [
+      { url: "/images/projects/friendChat_1.png", type: "image" },
+      { url: "/images/projects/friendChat_2.png", type: "image" },
+      { url: "/images/projects/friendChat_3.png", type: "image" },
+      { url: "/images/projects/friendChat_4.png", type: "image" },
+    ],
+    initial: "F",
   },
+  /**public\images\projects\slides\friendChat_1.png */
   {
     id: 3,
-    title: "Project 3",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Feed My Goat",
+    description: "Little JavaScript Game",
+    image: "/images/projects/feedMyGoat_1.png",
+    gitUrl: "https://github.com/CamelliaBui95/gps-goat",
+    type: "Web Application",
+    technologies: ["JavaScript", "CSS", "HTML"],
+    slides: [
+      { url: "/images/projects/feedMyGoat_1.png", type: "image" },
+      { url: "/images/projects/feedMyGoat_2.png", type: "image" },
+      { url: "/images/projects/feedMyGoat_vid.mp4", type: "video" },
+    ],
+    initial: "G",
   },
   {
     id: 4,
-    title: "Project 4",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
-    tag: ["All", "Desktop"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Routard Admin",
+    description: "Traveling Data Manager For Backpackers",
+    image: "/images/projects/routard_1.png",
+    gitUrl: "https://github.com/CamelliaBui95/RoutardFilRouge_v2",
+    type: "Desktop Application",
+    technologies: ["Java", "JavaFX", "Microsoft SQL Server", "Scene Builder"],
+    slides: [
+      { url: "/images/projects/routard_1.png", type: "image" },
+      { url: "/images/projects/routard_2.png", type: "image" },
+      { url: "/images/projects/routard_3.png", type: "image" },
+      { url: "/images/projects/routard_4.png", type: "image" },
+    ],
+    initial: "R",
   },
   {
     id: 5,
-    title: "Project 5",
-    description: "Project 5 description",
-    image: "/images/projects/5.png",
-    tag: ["All", "Desktop"],
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 6,
-    title: "Project 6",
-    description: "Project 6 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Desktop"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "SBDM",
+    description: "Desktop App For Product Management",
+    image: "/images/projects/sbdm_1.png",
+    gitUrl: "https://github.com/CamelliaBui95/SDBM_GestionDesBieres",
+    type: "Desktop Application",
+    technologies: ["Java", "JavaFX", "Microsoft SQL Server", "Scene Builder"],
+    slides: [
+      { url: "/images/projects/sbdm_1.png", type: "image" },
+      { url: "/images/projects/sbdm_2.png", type: "image" },
+      { url: "/images/projects/sbdm_3.png", type: "image" },
+      { url: "/images/projects/sbdm_4.png", type: "image" },
+    ],
+    initial: "S",
   },
 ];
 
-const ProjectSection = () => {
-  const [selectedTab, setSelectedTab] = useState("All");
-  const tags = ["All", "Web", "Desktop"];
+const ProjectSection = ({ onDisplayProjectDetail }) => {
+  const ref = useRef(null);
+  const [selected, setSelected] = useState("");
+  const [startAnimation, setStartAnimation] = useState(false);
 
-  const filteredProjects = projectsData.filter(p => p.tag.includes(selectedTab))
+  const handleChange = (e) => {
+    setSelected(e.target.value);
+  };
+
+  useEffect(() => {
+    let idTimeOut = null;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartAnimation(true);
+
+          if(idTimeOut === null) {
+            idTimeOut = setTimeout(() => {
+              setSelected("c3");
+            }, 5000);
+          }
+          
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(idTimeOut);
+    };
+  }, []);
 
   return (
-    <section className="mt-4" id="projects">
-      <h2 className="text-4xl font-bold text-center mb-5 md:mb-7 text-primaryColor">
+    <section className="project-section" id="projects">
+      <h2 className="text-primaryColor text-3xl md:text-4xl font-semibold text-center">
         My Projects
       </h2>
-      <div className="tabContainer tabContainer m-auto flex justify-evenly">
-        {tags.map((tag, index) => {
-          const isFirst = index === 0;
-          const isLast = index === tags.length - 1;
-          return (
-            <ProjectTab
-              label={tag}
-              isFirst={isFirst}
-              isLast={isLast}
-              id={index + 1}
-              onClick={() => setSelectedTab(tag)}
-              key={index}
-            />
-          );
-        })}
-      </div>
-      <ul className="grid md:grid-cols-3 gap-8 md:gap-12 mt-4">
-        {filteredProjects.map((project, index) => (
-          <li key={index}>
+      <div className="project-wrapper">
+        <div className="card-container" ref={ref}>
+          {projectsData.map((p) => (
             <ProjectCard
-              imgUrl={project.image}
-              name={project.title}
-              description={project.description}
+              project={p}
+              selected={selected}
+              onChange={handleChange}
+              startAnimation={startAnimation}
+              onDisplayProjectDetail={() => onDisplayProjectDetail(p)}
             />
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

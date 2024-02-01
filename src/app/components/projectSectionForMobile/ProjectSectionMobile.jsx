@@ -8,7 +8,7 @@ const projectsData = [
     title: "Top News Deliverer",
     description: "Top Headlines Delivered By NewsAPI",
     image: "/images/projects/newsAPI_1.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/CamelliaBui95/newsApi",
     type: "Web Application",
     technologies: ["JavaScript", "React", "NextJs", "Bootstrap"],
     slides: [
@@ -24,7 +24,7 @@ const projectsData = [
     title: "FriendChat",
     description: "Basic Real-time Chat Application",
     image: "/images/projects/friendChat_1.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/CamelliaBui95/friendchat",
     type: "Web Application",
     technologies: ["JavaScript", "React", "NodeJs", "MongoDB", "Bootstrap"],
     slides: [
@@ -41,7 +41,7 @@ const projectsData = [
     title: "Feed My Goat",
     description: "Little JavaScript Game",
     image: "/images/projects/feedMyGoat_1.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/CamelliaBui95/gps-goat",
     type: "Web Application",
     technologies: ["JavaScript", "CSS", "HTML"],
     slides: [
@@ -56,7 +56,7 @@ const projectsData = [
     title: "Routard Admin",
     description: "Traveling Data Manager For Backpackers",
     image: "/images/projects/routard_1.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/CamelliaBui95/RoutardFilRouge_v2",
     type: "Desktop Application",
     technologies: ["Java", "JavaFX", "Microsoft SQL Server", "Scene Builder"],
     slides: [
@@ -72,7 +72,7 @@ const projectsData = [
     title: "SBDM",
     description: "Desktop App For Product Management",
     image: "/images/projects/sbdm_1.png",
-    gitUrl: "/",
+    gitUrl: "https://github.com/CamelliaBui95/SDBM_GestionDesBieres",
     type: "Desktop Application",
     technologies: ["Java", "JavaFX", "Microsoft SQL Server", "Scene Builder"],
     slides: [

@@ -1,38 +1,69 @@
 "use client";
-import Link from "next/link";
-import React from "react";
+import React, {useState, useEffect} from "react";
+import "./projectSectionStyle.css";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
-import "./projectStyle.css";
+import Link from "next/link";
 
-const ProjectCard = ({ imgUrl, name, description }) => {
+const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayProjectDetail }) => {
+  const [slideIn, setSlideIn] = useState({});
+  const idInput = `c${project.id}`;
+
+  const animation = {
+    left: "0",
+    opacity: 1,
+    transitionProperty: "width, left",
+    transitionDuration: "0.6s, 0.8s",
+    transitionTimingFunction: "cubic-bezier(0.28, -0.03, 0, 0.99), cubic-bezier(0.28, -0.03, 0, 0.99)",
+    transitionDelay: `0s, ${Math.abs(project.id - 5)}s`,
+  }
+
+  useEffect(() => {
+
+    if(startAnimation) 
+      setSlideIn(animation);
+
+  }, [startAnimation])
+
   return (
-    <div className="shadow-xl">
-      <div
-        style={{ backgroundImage: `url(${imgUrl})`, backgroundSize: "cover" }}
-        className="h-52 md:h-72 rounded-t-xl relative group overflow-hidden "
+    <React.Fragment>
+      <input
+        type="radio"
+        name="slide"
+        value={idInput}
+        id={idInput}
+        checked={selected === idInput}
+        onChange={e => onChange(e)}
+      />
+      <label
+        htmlFor={idInput}
+        className="card"
+        style={{backgroundImage: `url(${project.image})`,...slideIn}}
       >
-        <div className="overlay absolute top-0 left-0 h-full w-full bg-secondaryBg transform -translate-y-[100%] bg-opacity-[0.5] group-hover:translate-y-0 group-hover:bg-opacity-70 group-hover:flex flex justify-center items-center transition-all duration-500">
-          <Link
-            href="/"
-            className="text-secondaryTextDeco mr-6 hover:text-textDeco transition-all duration-300"
-          >
-            <CodeBracketIcon className="h-12 w-12 xl:h-20 xl:w-20 " />
-          </Link>
-          <Link
-            href="/"
-            className="text-secondaryTextDeco hover:text-textDeco transition-all duration-300"
-          >
-            <EyeIcon className="h-12 w-12 xl:h-20 xl:w-20" />
-          </Link>
+        <div className="overlay">
+          <p className="initial transform translate-y-[50%] translate-x-[30%] text-primaryColor">
+            {project.initial}
+          </p>
         </div>
-      </div>
-      <div className="py-6 px-4 mt-2 bg-bgDeco rounded-b-xl">
-        <h3 className="text-primaryColor font-semibold text-xl md:text-2xl">
-          {name}
-        </h3>
-        <p className="text-secondaryColor">{description}</p>
-      </div>
-    </div>
+        <div className="content text-primaryColor">
+          <div className="card-index">{project.id}</div>
+
+          <div className="desc-container">
+            <div className="description">
+              <h4>{project.title}</h4>
+              <p>{project.description}</p>
+            </div>
+            <div className="icon flex flex-row justify-center items-center gap-2">
+              <Link href={project.gitUrl} className="p-2 hover:bg-secondaryTextDeco hover:text-white rounded-full transition-all duration-500">
+                <CodeBracketIcon className="h-[35px] w-[35px]" />
+              </Link>
+              <button className="p-2 mr-2 hover:bg-secondaryTextDeco hover:text-white rounded-full transition-all duration-500">
+                <EyeIcon className="h-[35px] w-[35px]" onClick={onDisplayProjectDetail} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </label>
+    </React.Fragment>
   );
 };
 

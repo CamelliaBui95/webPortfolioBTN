@@ -70,7 +70,7 @@ const ProjectCard = ({ project }) => {
         </div>
         <div className="link-groups flex flex-row justify-center items-center pr-2">
           <Link
-            href="/"
+            href={project.gitUrl}
             className="mx-2 p-2 rounded-full transition-all duration-300 hover:bg-secondaryTextDeco hover:text-white"
           >
             <CodeBracketIcon width={30} className="" />
