@@ -20,12 +20,12 @@ const ProjectCarousel = ({ display, onClose, project }) => {
   };
 
   const renderWrapper = (slide) => {
-    if (slide.type === "image")
-      return <Image src={slide.url ? slide.url : ""} width={1080} height={100} />;
-    if (slide.type === "video")
+    if (slide.url && slide.type === "image")
+      return <Image src={slide.url} width={900} height={100} alt="project image"/>;
+    if (slide.url && slide.type === "video")
       return (
-       <video ref={videoRef} width="85%" height="100%" controls preload="auto">
-          <source src={slide.url ? slide.url : ""} type="video/mp4"/>
+       <video ref={videoRef} width="90%" height="800px" controls preload="auto">
+          <source src={slide.url} type="video/mp4"/>
         </video>
       );
   };
@@ -40,27 +40,27 @@ const ProjectCarousel = ({ display, onClose, project }) => {
     >
       <div className="border-2 border-opacity-[0.4] border-primaryColor bg-primaryBg rounded-xl h-[250px] w-[380px] md:h-[90vh] md:w-[70%] px-5 py-5 text-primaryColor">
         <div className="flex justify-end text-lg">
-          <button onClick={() => {
+          <button
+            onClick={() => {
+              if (videoRef.current) videoRef.current.pause();
 
-            if(videoRef.current)
-              videoRef.current.pause();
-
-            onClose();
-          }}>
+              onClose();
+            }}
+          >
             <XMarkIcon className="transition-all duration-5 h-6 w-6 text-secondaryColor hover:text-primaryColor" />
           </button>
         </div>
 
         <div className="carousel">
           <button
-            className="slide-arrow"
+            className="slide-arrow z-10"
             id="arrow-prev"
             onClick={handlePrevClick}
           >
             &#8249;
           </button>
           <button
-            className="slide-arrow"
+            className="slide-arrow z-10"
             id="arrow-next"
             onClick={handleNextClick}
           >
@@ -74,11 +74,12 @@ const ProjectCarousel = ({ display, onClose, project }) => {
               className="slide flex justify-center items-center"
               ref={slideRef}
             >
-              <Image
-                src={project.slides ? project.slides[0].url : ""}
-                width={1080}
+              {project.slides && <Image
+                src={project.slides[0].url}
+                width={900}
                 height={100}
-              />
+                alt="project image"
+              />}
             </li>
             {project.slides &&
               project.slides.slice(1, project.slides.length).map((s, index) => (
@@ -92,17 +93,19 @@ const ProjectCarousel = ({ display, onClose, project }) => {
           </ul>
         </div>
 
-        <h3 className="text-primaryColor text-4xl mt-2">{project.title}</h3>
-        <p className="desc text-secondaryColor text-2xl py-5">
+        <h3 className="text-primaryColor text-2xl 3xl:text-4xl mt-2">
+          {project.title}
+        </h3>
+        <p className="desc text-secondaryColor text-xl 3xl:text-2xl py-1 3xl:py-5">
           {project.description}
         </p>
-        <p className="desc text-secondaryColor text-xl">
+        <p className="desc text-secondaryColor text-lg 3xl:text-xl">
           <span className="mr-3 text-primaryColor">
             <b>Type:</b>
           </span>
           {project.type}
         </p>
-        <p className="desc text-secondaryColor text-xl">
+        <p className="desc text-secondaryColor text-lg 3xl:text-xl">
           <span className="mr-3 text-primaryColor">
             <b>Technologies:</b>
           </span>
