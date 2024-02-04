@@ -21,7 +21,7 @@ const ProjectCarousel = ({ display, onClose, project }) => {
 
   const renderWrapper = (slide) => {
     if (slide.url && slide.type === "image")
-      return <Image src={slide.url} width={900} height={100} alt="project image"/>;
+      return <Image src={slide.url} width={900} height={990} style={{width: "auto", height: "auto"}} alt="project image"/>;
     if (slide.url && slide.type === "video")
       return (
        <video ref={videoRef} width="90%" height="800px" controls preload="auto">

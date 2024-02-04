@@ -46,7 +46,7 @@ const HeroSection = ({ onClickContactInfo }) => {
             />
           </h1>
           <p className="text-secondaryColor text-base sm:text-lg 3xl:text-2xl mb-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Natural Science, technologies and problem-solving are my main sources of dopamine.
           </p>
           <div>
             <button onClick={onClickContactInfo} className="btn1 rounded-full mr-4 mb-3 sm:mb-0 px-6 py-3 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-primaryColor font-semibold 2xl:text-xl transition-all duration-300 shadow-md">

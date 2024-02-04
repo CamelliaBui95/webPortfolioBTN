@@ -42,6 +42,7 @@ const TAB_DATA = [
         <ul className="list-disc pl-3">
           <li>Reading</li>
           <li>Playing piano</li>
+          <li>Contemplating on math / programming problems</li>
           <li>Fitness</li>
         </ul>
       </div>
@@ -91,7 +92,7 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section id="about" className="min-h-[70vh] transition-all">
+    <section id="about" className="min-h-[70vh] pb-[5rem] transition-all">
       <div
         className="md:grid md:grid-cols-2 gap-8 items-center px-4 xl:gap-16 xl:px-16"
         ref={ref}
@@ -122,12 +123,46 @@ const AboutSection = () => {
             }
           >
             <p className="text-base md:text-lg text-secondaryColor md:pt-6">
-              Currently looking for an internship in{" "}
-              <span className="text-primaryColor">
-                <b>backend services</b>
+              Hello, I'm{" "}
+              <span className="text-primaryColor font-semibold">
+                Tuong Nghi Bui
+              </span>{" "}
+              but you can call me{" "}
+              <span className="text-primaryColor font-semibold">Camellia</span>{" "}
+              . Thanks to my background in linguistics and business, I'm
+              proficient in English, pretty fluent in French and have a global
+              understanding of economics, marketing and sales.
+            </p>
+            <p className="text-base md:text-lg text-secondaryColor">
+              However, my biggest interests have always been{" "}
+              <span className="text-primaryColor font-semibold">
+                technologies, building and creating
               </span>
-              , I hope to get an opportunity to expand my knowledge and skill
-              set with your team.
+              . For this reason, in 2020, I decided to learn programming and
+              project my future into IT. I started out as a{" "}
+              <span className="text-primaryColor font-semibold">
+                self-taught
+              </span>{" "}
+              and am currently in a{" "}
+              <span className="text-primaryColor font-semibold">
+                12-month course for backend development
+              </span>
+              .
+            </p>
+            <p className="text-base md:text-lg text-secondaryColor">
+              I'm seeking an{" "}
+              <span className="text-primaryColor font-semibold">
+                internship
+              </span>{" "}
+              that would help put into practice my skills in{" "}
+              <span className="text-primaryColor font-semibold">
+                designing applications' architecture, data modeling
+              </span>{" "}
+              and{" "}
+              <span className="text-primaryColor font-semibold">
+                programming
+              </span>
+              .
             </p>
             <div className="flex flex-row mt-8">
               <TabButton
@@ -159,3 +194,13 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
+
+{
+  /* Currently looking for an internship in{" "}
+              <span className="text-primaryColor">
+                <b>backend services</b>
+              </span>
+              , I hope to get an opportunity to expand my knowledge and skill
+              set with your team.
+            </p> */
+}

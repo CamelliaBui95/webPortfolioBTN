@@ -47,11 +47,12 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="project-card-mobile">
       <div
-        className="h-[310px] w-full rounded-t-3xl shadow-xl"
+        className="h-[200px] sm:h-[250px] w-full rounded-t-3xl shadow-xl"
         style={{
           backgroundImage: `url(${backgroundImg})`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           transition: "all 0.3s ease 0.2s",
         }}
       ></div>
