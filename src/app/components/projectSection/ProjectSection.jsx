@@ -129,7 +129,7 @@ const ProjectSection = ({ onDisplayProjectDetail }) => {
         My Projects
       </h2>
       <div className="project-wrapper">
-        <ul className="card-container" ref={ref}>
+        <div className="card-container" ref={ref}>
           {projectsData.map((p, index) => (
             <ProjectCard
               project={p}
@@ -138,9 +138,10 @@ const ProjectSection = ({ onDisplayProjectDetail }) => {
               startAnimation={startAnimation}
               onDisplayProjectDetail={() => onDisplayProjectDetail(p)}
               index={index}
+              key={index}
             />
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

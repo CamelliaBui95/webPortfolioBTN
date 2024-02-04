@@ -25,7 +25,7 @@ const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayPro
   }, [startAnimation])
 
   return (
-    <li key={index}>
+    <React.Fragment key={"card" + index}>
       <input
         type="radio"
         name="slide"
@@ -63,7 +63,7 @@ const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayPro
           </div>
         </div>
       </label>
-    </li>
+    </React.Fragment>
   );
 };
 

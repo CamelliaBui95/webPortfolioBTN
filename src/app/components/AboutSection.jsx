@@ -29,7 +29,7 @@ const TAB_DATA = [
       <div className="mt-2 py-2 text-secondaryColor">
         <ul className="list-disc pl-3">
           <li>Business English, Ton Duc Thang University, HoChiMinh City</li>
-          <li>CDA - Concepteur Developpeur d'Application, AFPA Roubaix</li>
+          <li>CDA - Concepteur Developpeur d&apos;Application, AFPA Roubaix</li>
         </ul>
       </div>
     ),
