@@ -22,6 +22,21 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "Feed My Goat",
+    description: "Little JavaScript Game",
+    image: "/images/projects/feedMyGoat_1.png",
+    gitUrl: "https://github.com/CamelliaBui95/gps-goat",
+    type: "Web Application",
+    technologies: ["JavaScript", "CSS", "HTML"],
+    slides: [
+      { url: "/images/projects/feedMyGoat_1.png", type: "image" },
+      { url: "/images/projects/feedMyGoat_2.png", type: "image" },
+      { url: "/images/projects/feedMyGoat_vid.mp4", type: "video" },
+    ],
+    initial: "G",
+  },
+  {
+    id: 3,
     title: "FriendChat",
     description: "Basic Real-time Chat Application",
     image: "/images/projects/friendChat_v2_4.png",
@@ -38,21 +53,6 @@ const projectsData = [
       { url: "/images/projects/friendChat_v2_2.png", type: "image" },
     ],
     initial: "F",
-  },
-  {
-    id: 3,
-    title: "Feed My Goat",
-    description: "Little JavaScript Game",
-    image: "/images/projects/feedMyGoat_1.png",
-    gitUrl: "https://github.com/CamelliaBui95/gps-goat",
-    type: "Web Application",
-    technologies: ["JavaScript", "CSS", "HTML"],
-    slides: [
-      { url: "/images/projects/feedMyGoat_1.png", type: "image" },
-      { url: "/images/projects/feedMyGoat_2.png", type: "image" },
-      { url: "/images/projects/feedMyGoat_vid.mp4", type: "video" },
-    ],
-    initial: "G",
   },
   {
     id: 4,
