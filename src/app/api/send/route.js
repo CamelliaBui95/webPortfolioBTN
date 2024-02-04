@@ -4,19 +4,26 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req, res) {
-    const { email, subject, message } = await req.json();
+  const { email, subject, message } = await req.json();
     
   try {
     const data = await resend.emails.send({
-      from: fromEmail,
+      from: `Camellia <${fromEmail}>`,
       to: [fromEmail, email],
       subject: subject,
       react: (
         <>
-          <h1>{subject}</h1>
-          <p>Thank you for contacting!</p>
-          <p>New message submit</p>
+          <h2>Nouveau Message Envoyé:</h2>
+          <h3>
+            <U>Subjet:</U> {subject}
+          </h3>
+          <h3>
+            <U>Contenu:</U>
+          </h3>
           <p>{message}</p>
+          <br/>
+          <p>Merci de me contacter. Je vous contacterai dans les plus brefs délais.</p>
+          <h4>Camellia Bui</h4>
         </>
       ),
     });
