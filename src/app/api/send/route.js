@@ -15,10 +15,10 @@ export async function POST(req, res) {
         <>
           <h2>Nouveau Message Envoyé:</h2>
           <h3>
-            <U>Subjet:</U> {subject}
+            Subjet: {subject}
           </h3>
           <h3>
-            <U>Contenu:</U>
+            Contenu:
           </h3>
           <p>{message}</p>
           <br/>
