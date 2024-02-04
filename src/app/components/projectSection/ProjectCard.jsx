@@ -53,7 +53,7 @@ const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayPro
               <p>{project.description}</p>
             </div>
             <div className="icon flex flex-row justify-center items-center gap-2">
-              <Link href={project.gitUrl} className="p-2 hover:bg-secondaryTextDeco hover:text-white rounded-full transition-all duration-500">
+              <Link href={project.gitUrl} className="p-2 hover:bg-secondaryTextDeco hover:text-white rounded-full transition-all duration-500" target="blank">
                 <CodeBracketIcon className="h-[35px] w-[35px]" />
               </Link>
               <button className="p-2 mr-2 hover:bg-secondaryTextDeco hover:text-white rounded-full transition-all duration-500">
