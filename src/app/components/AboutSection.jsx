@@ -123,13 +123,13 @@ const AboutSection = () => {
             }
           >
             <p className="text-base md:text-lg text-secondaryColor md:pt-6">
-              Hello, I'm{" "}
+              Hello, I&apos;m{" "}
               <span className="text-primaryColor font-semibold">
                 Tuong Nghi Bui
               </span>{" "}
               but you can call me{" "}
               <span className="text-primaryColor font-semibold">Camellia</span>{" "}
-              . Thanks to my background in linguistics and business, I'm
+              . Thanks to my background in linguistics and business, I&apos;m
               proficient in English, pretty fluent in French and have a global
               understanding of economics, marketing and sales.
             </p>
@@ -150,13 +150,13 @@ const AboutSection = () => {
               .
             </p>
             <p className="text-base md:text-lg text-secondaryColor">
-              I'm seeking an{" "}
+              I&apos;m seeking an{" "}
               <span className="text-primaryColor font-semibold">
                 internship
               </span>{" "}
               that would help put into practice my skills in{" "}
               <span className="text-primaryColor font-semibold">
-                designing applications' architecture, data modeling
+                designing applications&apos; architecture, data modeling
               </span>{" "}
               and{" "}
               <span className="text-primaryColor font-semibold">

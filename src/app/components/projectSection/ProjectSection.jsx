@@ -105,12 +105,11 @@ const ProjectSection = ({ onDisplayProjectDetail }) => {
         if (entry.isIntersecting) {
           setStartAnimation(true);
 
-          if(idTimeOut === null) {
+          if (idTimeOut === null) {
             idTimeOut = setTimeout(() => {
               setSelected("c3");
             }, 5000);
           }
-          
         }
       },
       { threshold: 1 }
@@ -130,17 +129,18 @@ const ProjectSection = ({ onDisplayProjectDetail }) => {
         My Projects
       </h2>
       <div className="project-wrapper">
-        <div className="card-container" ref={ref}>
-          {projectsData.map((p) => (
+        <ul className="card-container" ref={ref}>
+          {projectsData.map((p, index) => (
             <ProjectCard
               project={p}
               selected={selected}
               onChange={handleChange}
               startAnimation={startAnimation}
               onDisplayProjectDetail={() => onDisplayProjectDetail(p)}
+              index={index}
             />
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

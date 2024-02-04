@@ -4,7 +4,7 @@ import "./projectSectionStyle.css";
 import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayProjectDetail }) => {
+const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayProjectDetail, index }) => {
   const [slideIn, setSlideIn] = useState({});
   const idInput = `c${project.id}`;
 
@@ -25,7 +25,7 @@ const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayPro
   }, [startAnimation])
 
   return (
-    <React.Fragment>
+    <li key={index}>
       <input
         type="radio"
         name="slide"
@@ -63,7 +63,7 @@ const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayPro
           </div>
         </div>
       </label>
-    </React.Fragment>
+    </li>
   );
 };
 

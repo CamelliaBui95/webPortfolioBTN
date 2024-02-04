@@ -58,13 +58,13 @@ const ContactSection = () => {
         <p
           className={`prompt ${promptSlideUp} text-primaryColor text-center text-5xl`}
         >
-          Let's connect !
+          Let&apos;s connect !
         </p>
         <p
           className={`text ${showText} text-secondaryColor text-center text-3xl mt-12 px-4 w-fit`}
         >
           My inbox is always open. Whether you have a question or just want to
-          say hi, I'll try my best to get back to you.
+          say hi, I&apos;ll try my best to get back to you.
         </p>
       </div>
 

@@ -73,6 +73,7 @@ const ProjectCarousel = ({ display, onClose, project }) => {
             <li
               className="slide flex justify-center items-center"
               ref={slideRef}
+              key={0}
             >
               {project.slides && <Image
                 src={project.slides[0].url}
@@ -86,6 +87,7 @@ const ProjectCarousel = ({ display, onClose, project }) => {
                 <li
                   className="slide flex justify-center items-center"
                   ref={slideRef}
+                  key={index}
                 >
                   {renderWrapper(s)}
                 </li>
