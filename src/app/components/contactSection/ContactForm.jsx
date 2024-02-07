@@ -78,6 +78,7 @@ const ContactForm = ({display}) => {
             name="message"
             id="message"
             className="placeholder-secondaryColor text-primaryColor text-sm rounded-lg block w-full p-2.5"
+            required
             placeholder="..."
           ></textarea>
         </div>
