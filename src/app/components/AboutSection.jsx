@@ -12,7 +12,7 @@ const TAB_DATA = [
         <ul className="list-disc pl-3">
           <li>Node.js, Express</li>
           <li>React, Next.js</li>
-          <li>JavaFx, JSP/JSF, Primefaces</li>
+          <li>Spring Boot, JavaFx, JSP/JSF, Primefaces</li>
         </ul>
         <ul className="list-disc ml-10">
           <li>Microsoft SQL Server, MongoDB</li>

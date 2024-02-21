@@ -28,10 +28,17 @@ const ContactInfo = ({ display, onClose }) => {
           <p className="ml-2">camellia.bui95@gmail.com</p>
         </div>
         <div className="flex">
-          <Link href="https://github.com/CamelliaBui95" className="mr-2" target="blank">
+          <Link
+            href="https://github.com/CamelliaBui95"
+            className="mr-2"
+            target="blank"
+          >
             <div className="bg-iconGithub h-[50px] w-[50px]"></div>
           </Link>
-          <Link href="https://www.linkedin.com/in/nghi-bui-9b9585173" target="blank">
+          <Link
+            href="https://fr.linkedin.com/in/camellia-bui-9b9585173"
+            target="blank"
+          >
             <div className="bg-iconLinkedIn h-[50px] w-[50px]"></div>
           </Link>
         </div>
