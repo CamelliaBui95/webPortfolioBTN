@@ -12,7 +12,7 @@ const ProjectCard = ({ project, startAnimation, onChange, selected, onDisplayPro
     left: "0",
     opacity: 1,
     transitionProperty: "width, left",
-    transitionDuration: "0.6s, 0.8s",
+    transitionDuration: "0.6s, 0.3s",
     transitionTimingFunction: "cubic-bezier(0.28, -0.03, 0, 0.99), cubic-bezier(0.28, -0.03, 0, 0.99)",
     transitionDelay: `0s, ${Math.abs(project.id - 5)}s`,
   }

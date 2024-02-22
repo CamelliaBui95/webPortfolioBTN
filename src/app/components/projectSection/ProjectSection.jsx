@@ -128,6 +128,13 @@ const ProjectSection = ({ onDisplayProjectDetail }) => {
       <h2 className="text-primaryColor text-3xl md:text-4xl font-semibold text-center">
         My Projects
       </h2>
+      <div className="flex flex-row justify-center items-center mt-6 3xl:mt-8">
+        <p className="text-secondaryColor text-xl 3xl:text-2xl text-center max-w-[800px]">
+          Each of my projects are developed with lots of <b>care</b> and{" "}
+          <b>passion</b>. They are never really finished, though, because there
+          are always room for <b>expansion</b> and <b>improvement !</b>
+        </p>
+      </div>
       <div className="project-wrapper">
         <div className="card-container" ref={ref}>
           {projectsData.map((p, index) => (
