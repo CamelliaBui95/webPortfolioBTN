@@ -46,8 +46,7 @@ const HeroSection = ({ onClickContactInfo }) => {
             />
           </h1>
           <p className="text-secondaryColor text-base sm:text-lg 3xl:text-2xl mb-6">
-            Natural Science, technologies and problem-solving are my main
-            sources of dopamine.
+            I love developping <b>solutions</b>.
           </p>
           <div>
             <button

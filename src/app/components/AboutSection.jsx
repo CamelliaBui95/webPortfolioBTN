@@ -131,7 +131,7 @@ const AboutSection = () => {
               <span className="text-primaryColor font-semibold">Camellia</span>{" "}
               . Thanks to my background in linguistics and business, I&apos;m
               proficient in English, pretty fluent in French and have a global
-              understanding of economics, marketing and sales.
+              understanding of marketing and sales.
             </p>
             <p className="text-base md:text-lg text-secondaryColor">
               However, my biggest interests have always been{" "}
