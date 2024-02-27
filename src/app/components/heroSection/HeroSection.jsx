@@ -58,7 +58,7 @@ const HeroSection = ({ onClickContactInfo }) => {
             </button>
             <button className="btn2 rounded-full mr-4 mb-5 sm:mb-0 px-1 py-1 w-full sm:w-fit bg-gradient-to-r from-grad-from via-grad-via to-grad-to text-primaryColor font-semibold 2xl:text-xl transition-all duration-300 shadow-md ">
               <a
-                href="./cv/TuongNghiBui_CV.pdf"
+                href="./cv/BuiTuongNghi_CV.pdf"
                 download
                 className="block rounded-full bg-primaryBg px-5 py-2 text-secondaryBaseColor"
               >
